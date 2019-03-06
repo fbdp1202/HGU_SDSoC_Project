@@ -1,0 +1,1 @@
+./darknet.elf detect cfg/tiny-yolo.cfg tiny-yolo.weights data/person.jpg
