@@ -1,2 +1,0 @@
-Compiling (synthesis checkpoint) kernel/IP: zed_m00_regslice_1
-Log file: /home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/build/zed_linux_hw/_sds/p0/vivado/prj/prj.runs/zed_m00_regslice_1_synth_1/runme.log
