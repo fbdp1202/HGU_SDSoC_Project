@@ -121,8 +121,8 @@ void sw_convolutional_layer(layer *pl, float *inputs, int num_repeat) {
 	layer l = *pl;
 
 	int m = l.k;
-	int n = l.size*l.size*l.c;
-	int k = l.out_w*l.out_h;
+	int k = l.size*l.size*l.c;
+	int n = l.out_w*l.out_h;
     float *a = l.weights;
     float *b = (float *)calloc(1, get_workspace_size(l));
     float *c = l.outputs;
@@ -191,8 +191,8 @@ void hw_convolutional_layer(layer *pl, float *inputs, int num_repeat) {
 	layer l = *pl;
 
 	int m = l.k;
-	int n = l.size*l.size*l.c;
-	int k = l.out_w*l.out_h;
+	int k = l.size*l.size*l.c;
+	int n = l.out_w*l.out_h;
     float *a = l.weights;
     float *b = (float *)calloc(1, get_workspace_size(l));
     float *c = l.outputs;
@@ -201,7 +201,7 @@ void hw_convolutional_layer(layer *pl, float *inputs, int num_repeat) {
 	printf("FPGA im2col Time: %f seconds\n", (what_time_is_it_now()-start_fpga_time));
 
 	for (i=0; i<num_repeat; i++) {
-		gemm(m,n,k,a,k,b,n,c,n);
+		gemm_fpga(m,n,k,a,k,b,n,c,n);
 	}
 	printf("FPGA imge convolution Time: %f seconds\n", (what_time_is_it_now()-start_fpga_time)/num_repeat);
 }
