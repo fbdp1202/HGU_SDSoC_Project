@@ -1,0 +1,465 @@
+<profile>
+
+<section name = "Vivado HLS Report for 'cal_gemm'" level="0">
+<item name = "Date">Fri Mar  8 14:10:20 2019
+</item>
+<item name = "Version">2018.2 (Build 2258646 on Thu Jun 14 20:25:20 MDT 2018)</item>
+<item name = "Project">cal_gemm</item>
+<item name = "Solution">solution</item>
+<item name = "Product family">zynq</item>
+<item name = "Target device">xc7z020clg484-1</item>
+</section>
+
+<section name = "Performance Estimates" level="0">
+<item name = "Timing (ns)">
+<section name = "" level="1">
+<item name = "Target clock period (ns)">10.00</item>
+<item name = "Clock uncertainty (ns)">2.70</item>
+<item name = "Estimated clock period (ns)">7.268</item>
+</section>
+</item>
+<item name = "Latency (clock cycles)">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">, min, max, min, max, Type</keys>
+<column name="">34375, 34375, 34375, 34375, none</column>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="0">
+<keys size="7">Instance, Module, min, max, min, max, Type</keys>
+<column name="grp_stream_cal_fu_288">stream_cal, 24349, 24349, 24349, 24349, dataflow</column>
+<column name="grp_write_out_fu_358">write_out, 5411, 5411, 5411, 5411, none</column>
+<column name="grp_cal_initial_fu_396">cal_initial, 4610, 4610, 4611, 4611, dataflow</column>
+</table>
+</item>
+<item name = "Loop"><table name="" hasTotal="0">
+<keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+</table>
+</item>
+</section>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Utilization Estimates" level="0">
+<item name = "Summary"><table name="" hasTotal="1">
+<keys size="5">Name, BRAM_18K, DSP48E, FF, LUT</keys>
+<column name="DSP">-, -, -, -</column>
+<column name="Expression">-, -, 0, 8</column>
+<column name="FIFO">-, -, -, -</column>
+<column name="Instance">2, 160, 18026, 24977</column>
+<column name="Memory">96, -, 0, 0</column>
+<column name="Multiplexer">-, -, -, 3521</column>
+<column name="Register">-, -, 13, -</column>
+<specialColumn name="Available">280, 220, 106400, 53200</specialColumn>
+<specialColumn name="Utilization (%)">35, 72, 16, 53</specialColumn>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="1">
+<keys size="6">Instance, Module, BRAM_18K, DSP48E, FF, LUT</keys>
+<column name="grp_cal_initial_fu_396">cal_initial, 0, 0, 65, 258</column>
+<column name="grp_stream_cal_fu_288">stream_cal, 2, 160, 17844, 24278</column>
+<column name="grp_write_out_fu_358">write_out, 0, 0, 117, 441</column>
+</table>
+</item>
+<item name = "DSP48"><table name="" hasTotal="0">
+<keys size="3">Instance, Module, Expression</keys>
+</table>
+</item>
+<item name = "Memory"><table name="" hasTotal="1">
+<keys size="9">Memory, Module, BRAM_18K, FF, LUT, Words, Bits, Banks, W*Bits*Banks</keys>
+<column name="la_0_U">cal_gemm_la_0, 1, 0, 0, 144, 32, 1, 4608</column>
+<column name="la_1_U">cal_gemm_la_0, 1, 0, 0, 144, 32, 1, 4608</column>
+<column name="la_2_U">cal_gemm_la_0, 1, 0, 0, 144, 32, 1, 4608</column>
+<column name="la_3_U">cal_gemm_la_0, 1, 0, 0, 144, 32, 1, 4608</column>
+<column name="la_4_U">cal_gemm_la_0, 1, 0, 0, 144, 32, 1, 4608</column>
+<column name="la_5_U">cal_gemm_la_0, 1, 0, 0, 144, 32, 1, 4608</column>
+<column name="la_6_U">cal_gemm_la_0, 1, 0, 0, 144, 32, 1, 4608</column>
+<column name="la_7_U">cal_gemm_la_0, 1, 0, 0, 144, 32, 1, 4608</column>
+<column name="la_8_U">cal_gemm_la_0, 1, 0, 0, 144, 32, 1, 4608</column>
+<column name="la_9_U">cal_gemm_la_0, 1, 0, 0, 144, 32, 1, 4608</column>
+<column name="la_10_U">cal_gemm_la_0, 1, 0, 0, 144, 32, 1, 4608</column>
+<column name="la_11_U">cal_gemm_la_0, 1, 0, 0, 144, 32, 1, 4608</column>
+<column name="la_12_U">cal_gemm_la_0, 1, 0, 0, 144, 32, 1, 4608</column>
+<column name="la_13_U">cal_gemm_la_0, 1, 0, 0, 144, 32, 1, 4608</column>
+<column name="la_14_U">cal_gemm_la_0, 1, 0, 0, 144, 32, 1, 4608</column>
+<column name="la_15_U">cal_gemm_la_0, 1, 0, 0, 144, 32, 1, 4608</column>
+<column name="la_16_U">cal_gemm_la_0, 1, 0, 0, 144, 32, 1, 4608</column>
+<column name="la_17_U">cal_gemm_la_0, 1, 0, 0, 144, 32, 1, 4608</column>
+<column name="la_18_U">cal_gemm_la_0, 1, 0, 0, 144, 32, 1, 4608</column>
+<column name="la_19_U">cal_gemm_la_0, 1, 0, 0, 144, 32, 1, 4608</column>
+<column name="la_20_U">cal_gemm_la_0, 1, 0, 0, 144, 32, 1, 4608</column>
+<column name="la_21_U">cal_gemm_la_0, 1, 0, 0, 144, 32, 1, 4608</column>
+<column name="la_22_U">cal_gemm_la_0, 1, 0, 0, 144, 32, 1, 4608</column>
+<column name="la_23_U">cal_gemm_la_0, 1, 0, 0, 144, 32, 1, 4608</column>
+<column name="la_24_U">cal_gemm_la_0, 1, 0, 0, 144, 32, 1, 4608</column>
+<column name="la_25_U">cal_gemm_la_0, 1, 0, 0, 144, 32, 1, 4608</column>
+<column name="la_26_U">cal_gemm_la_0, 1, 0, 0, 144, 32, 1, 4608</column>
+<column name="la_27_U">cal_gemm_la_0, 1, 0, 0, 144, 32, 1, 4608</column>
+<column name="la_28_U">cal_gemm_la_0, 1, 0, 0, 144, 32, 1, 4608</column>
+<column name="la_29_U">cal_gemm_la_0, 1, 0, 0, 144, 32, 1, 4608</column>
+<column name="la_30_U">cal_gemm_la_0, 1, 0, 0, 144, 32, 1, 4608</column>
+<column name="la_31_U">cal_gemm_la_0, 1, 0, 0, 144, 32, 1, 4608</column>
+<column name="lout_0_U">cal_gemm_lout_0, 2, 0, 0, 169, 32, 1, 5408</column>
+<column name="lout_1_U">cal_gemm_lout_0, 2, 0, 0, 169, 32, 1, 5408</column>
+<column name="lout_2_U">cal_gemm_lout_0, 2, 0, 0, 169, 32, 1, 5408</column>
+<column name="lout_3_U">cal_gemm_lout_0, 2, 0, 0, 169, 32, 1, 5408</column>
+<column name="lout_4_U">cal_gemm_lout_0, 2, 0, 0, 169, 32, 1, 5408</column>
+<column name="lout_5_U">cal_gemm_lout_0, 2, 0, 0, 169, 32, 1, 5408</column>
+<column name="lout_6_U">cal_gemm_lout_0, 2, 0, 0, 169, 32, 1, 5408</column>
+<column name="lout_7_U">cal_gemm_lout_0, 2, 0, 0, 169, 32, 1, 5408</column>
+<column name="lout_8_U">cal_gemm_lout_0, 2, 0, 0, 169, 32, 1, 5408</column>
+<column name="lout_9_U">cal_gemm_lout_0, 2, 0, 0, 169, 32, 1, 5408</column>
+<column name="lout_10_U">cal_gemm_lout_0, 2, 0, 0, 169, 32, 1, 5408</column>
+<column name="lout_11_U">cal_gemm_lout_0, 2, 0, 0, 169, 32, 1, 5408</column>
+<column name="lout_12_U">cal_gemm_lout_0, 2, 0, 0, 169, 32, 1, 5408</column>
+<column name="lout_13_U">cal_gemm_lout_0, 2, 0, 0, 169, 32, 1, 5408</column>
+<column name="lout_14_U">cal_gemm_lout_0, 2, 0, 0, 169, 32, 1, 5408</column>
+<column name="lout_15_U">cal_gemm_lout_0, 2, 0, 0, 169, 32, 1, 5408</column>
+<column name="lout_16_U">cal_gemm_lout_0, 2, 0, 0, 169, 32, 1, 5408</column>
+<column name="lout_17_U">cal_gemm_lout_0, 2, 0, 0, 169, 32, 1, 5408</column>
+<column name="lout_18_U">cal_gemm_lout_0, 2, 0, 0, 169, 32, 1, 5408</column>
+<column name="lout_19_U">cal_gemm_lout_0, 2, 0, 0, 169, 32, 1, 5408</column>
+<column name="lout_20_U">cal_gemm_lout_0, 2, 0, 0, 169, 32, 1, 5408</column>
+<column name="lout_21_U">cal_gemm_lout_0, 2, 0, 0, 169, 32, 1, 5408</column>
+<column name="lout_22_U">cal_gemm_lout_0, 2, 0, 0, 169, 32, 1, 5408</column>
+<column name="lout_23_U">cal_gemm_lout_0, 2, 0, 0, 169, 32, 1, 5408</column>
+<column name="lout_24_U">cal_gemm_lout_0, 2, 0, 0, 169, 32, 1, 5408</column>
+<column name="lout_25_U">cal_gemm_lout_0, 2, 0, 0, 169, 32, 1, 5408</column>
+<column name="lout_26_U">cal_gemm_lout_0, 2, 0, 0, 169, 32, 1, 5408</column>
+<column name="lout_27_U">cal_gemm_lout_0, 2, 0, 0, 169, 32, 1, 5408</column>
+<column name="lout_28_U">cal_gemm_lout_0, 2, 0, 0, 169, 32, 1, 5408</column>
+<column name="lout_29_U">cal_gemm_lout_0, 2, 0, 0, 169, 32, 1, 5408</column>
+<column name="lout_30_U">cal_gemm_lout_0, 2, 0, 0, 169, 32, 1, 5408</column>
+<column name="lout_31_U">cal_gemm_lout_0, 2, 0, 0, 169, 32, 1, 5408</column>
+</table>
+</item>
+<item name = "FIFO"><table name="" hasTotal="1">
+<keys size="7">Name, BRAM_18K, FF, LUT, Depth, Bits, Size:D*B</keys>
+</table>
+</item>
+<item name = "Expression"><table name="" hasTotal="1">
+<keys size="7">Variable Name, Operation, DSP48E, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
+<column name="ap_sync_grp_cal_initial_fu_396_ap_done">or, 0, 0, 2, 1, 1</column>
+<column name="ap_sync_grp_cal_initial_fu_396_ap_ready">or, 0, 0, 2, 1, 1</column>
+<column name="ap_sync_grp_stream_cal_fu_288_ap_done">or, 0, 0, 2, 1, 1</column>
+<column name="ap_sync_grp_stream_cal_fu_288_ap_ready">or, 0, 0, 2, 1, 1</column>
+</table>
+</item>
+<item name = "Multiplexer"><table name="" hasTotal="1">
+<keys size="5">Name, LUT, Input Size, Bits, Total Bits</keys>
+<column name="A_read">9, 2, 1, 2</column>
+<column name="B_read">9, 2, 1, 2</column>
+<column name="C_write">9, 2, 1, 2</column>
+<column name="ap_NS_fsm">38, 7, 1, 7</column>
+<column name="la_0_address0">15, 3, 8, 24</column>
+<column name="la_0_ce0">15, 3, 1, 3</column>
+<column name="la_0_we0">9, 2, 1, 2</column>
+<column name="la_10_address0">15, 3, 8, 24</column>
+<column name="la_10_ce0">15, 3, 1, 3</column>
+<column name="la_10_we0">9, 2, 1, 2</column>
+<column name="la_11_address0">15, 3, 8, 24</column>
+<column name="la_11_ce0">15, 3, 1, 3</column>
+<column name="la_11_we0">9, 2, 1, 2</column>
+<column name="la_12_address0">15, 3, 8, 24</column>
+<column name="la_12_ce0">15, 3, 1, 3</column>
+<column name="la_12_we0">9, 2, 1, 2</column>
+<column name="la_13_address0">15, 3, 8, 24</column>
+<column name="la_13_ce0">15, 3, 1, 3</column>
+<column name="la_13_we0">9, 2, 1, 2</column>
+<column name="la_14_address0">15, 3, 8, 24</column>
+<column name="la_14_ce0">15, 3, 1, 3</column>
+<column name="la_14_we0">9, 2, 1, 2</column>
+<column name="la_15_address0">15, 3, 8, 24</column>
+<column name="la_15_ce0">15, 3, 1, 3</column>
+<column name="la_15_we0">9, 2, 1, 2</column>
+<column name="la_16_address0">15, 3, 8, 24</column>
+<column name="la_16_ce0">15, 3, 1, 3</column>
+<column name="la_16_we0">9, 2, 1, 2</column>
+<column name="la_17_address0">15, 3, 8, 24</column>
+<column name="la_17_ce0">15, 3, 1, 3</column>
+<column name="la_17_we0">9, 2, 1, 2</column>
+<column name="la_18_address0">15, 3, 8, 24</column>
+<column name="la_18_ce0">15, 3, 1, 3</column>
+<column name="la_18_we0">9, 2, 1, 2</column>
+<column name="la_19_address0">15, 3, 8, 24</column>
+<column name="la_19_ce0">15, 3, 1, 3</column>
+<column name="la_19_we0">9, 2, 1, 2</column>
+<column name="la_1_address0">15, 3, 8, 24</column>
+<column name="la_1_ce0">15, 3, 1, 3</column>
+<column name="la_1_we0">9, 2, 1, 2</column>
+<column name="la_20_address0">15, 3, 8, 24</column>
+<column name="la_20_ce0">15, 3, 1, 3</column>
+<column name="la_20_we0">9, 2, 1, 2</column>
+<column name="la_21_address0">15, 3, 8, 24</column>
+<column name="la_21_ce0">15, 3, 1, 3</column>
+<column name="la_21_we0">9, 2, 1, 2</column>
+<column name="la_22_address0">15, 3, 8, 24</column>
+<column name="la_22_ce0">15, 3, 1, 3</column>
+<column name="la_22_we0">9, 2, 1, 2</column>
+<column name="la_23_address0">15, 3, 8, 24</column>
+<column name="la_23_ce0">15, 3, 1, 3</column>
+<column name="la_23_we0">9, 2, 1, 2</column>
+<column name="la_24_address0">15, 3, 8, 24</column>
+<column name="la_24_ce0">15, 3, 1, 3</column>
+<column name="la_24_we0">9, 2, 1, 2</column>
+<column name="la_25_address0">15, 3, 8, 24</column>
+<column name="la_25_ce0">15, 3, 1, 3</column>
+<column name="la_25_we0">9, 2, 1, 2</column>
+<column name="la_26_address0">15, 3, 8, 24</column>
+<column name="la_26_ce0">15, 3, 1, 3</column>
+<column name="la_26_we0">9, 2, 1, 2</column>
+<column name="la_27_address0">15, 3, 8, 24</column>
+<column name="la_27_ce0">15, 3, 1, 3</column>
+<column name="la_27_we0">9, 2, 1, 2</column>
+<column name="la_28_address0">15, 3, 8, 24</column>
+<column name="la_28_ce0">15, 3, 1, 3</column>
+<column name="la_28_we0">9, 2, 1, 2</column>
+<column name="la_29_address0">15, 3, 8, 24</column>
+<column name="la_29_ce0">15, 3, 1, 3</column>
+<column name="la_29_we0">9, 2, 1, 2</column>
+<column name="la_2_address0">15, 3, 8, 24</column>
+<column name="la_2_ce0">15, 3, 1, 3</column>
+<column name="la_2_we0">9, 2, 1, 2</column>
+<column name="la_30_address0">15, 3, 8, 24</column>
+<column name="la_30_ce0">15, 3, 1, 3</column>
+<column name="la_30_we0">9, 2, 1, 2</column>
+<column name="la_31_address0">15, 3, 8, 24</column>
+<column name="la_31_ce0">15, 3, 1, 3</column>
+<column name="la_31_we0">9, 2, 1, 2</column>
+<column name="la_3_address0">15, 3, 8, 24</column>
+<column name="la_3_ce0">15, 3, 1, 3</column>
+<column name="la_3_we0">9, 2, 1, 2</column>
+<column name="la_4_address0">15, 3, 8, 24</column>
+<column name="la_4_ce0">15, 3, 1, 3</column>
+<column name="la_4_we0">9, 2, 1, 2</column>
+<column name="la_5_address0">15, 3, 8, 24</column>
+<column name="la_5_ce0">15, 3, 1, 3</column>
+<column name="la_5_we0">9, 2, 1, 2</column>
+<column name="la_6_address0">15, 3, 8, 24</column>
+<column name="la_6_ce0">15, 3, 1, 3</column>
+<column name="la_6_we0">9, 2, 1, 2</column>
+<column name="la_7_address0">15, 3, 8, 24</column>
+<column name="la_7_ce0">15, 3, 1, 3</column>
+<column name="la_7_we0">9, 2, 1, 2</column>
+<column name="la_8_address0">15, 3, 8, 24</column>
+<column name="la_8_ce0">15, 3, 1, 3</column>
+<column name="la_8_we0">9, 2, 1, 2</column>
+<column name="la_9_address0">15, 3, 8, 24</column>
+<column name="la_9_ce0">15, 3, 1, 3</column>
+<column name="la_9_we0">9, 2, 1, 2</column>
+<column name="lout_0_address0">21, 4, 8, 32</column>
+<column name="lout_0_ce0">21, 4, 1, 4</column>
+<column name="lout_0_ce1">9, 2, 1, 2</column>
+<column name="lout_0_we0">9, 2, 1, 2</column>
+<column name="lout_0_we1">9, 2, 1, 2</column>
+<column name="lout_10_address0">21, 4, 8, 32</column>
+<column name="lout_10_ce0">21, 4, 1, 4</column>
+<column name="lout_10_ce1">9, 2, 1, 2</column>
+<column name="lout_10_we0">9, 2, 1, 2</column>
+<column name="lout_10_we1">9, 2, 1, 2</column>
+<column name="lout_11_address0">21, 4, 8, 32</column>
+<column name="lout_11_ce0">21, 4, 1, 4</column>
+<column name="lout_11_ce1">9, 2, 1, 2</column>
+<column name="lout_11_we0">9, 2, 1, 2</column>
+<column name="lout_11_we1">9, 2, 1, 2</column>
+<column name="lout_12_address0">21, 4, 8, 32</column>
+<column name="lout_12_ce0">21, 4, 1, 4</column>
+<column name="lout_12_ce1">9, 2, 1, 2</column>
+<column name="lout_12_we0">9, 2, 1, 2</column>
+<column name="lout_12_we1">9, 2, 1, 2</column>
+<column name="lout_13_address0">21, 4, 8, 32</column>
+<column name="lout_13_ce0">21, 4, 1, 4</column>
+<column name="lout_13_ce1">9, 2, 1, 2</column>
+<column name="lout_13_we0">9, 2, 1, 2</column>
+<column name="lout_13_we1">9, 2, 1, 2</column>
+<column name="lout_14_address0">21, 4, 8, 32</column>
+<column name="lout_14_ce0">21, 4, 1, 4</column>
+<column name="lout_14_ce1">9, 2, 1, 2</column>
+<column name="lout_14_we0">9, 2, 1, 2</column>
+<column name="lout_14_we1">9, 2, 1, 2</column>
+<column name="lout_15_address0">21, 4, 8, 32</column>
+<column name="lout_15_ce0">21, 4, 1, 4</column>
+<column name="lout_15_ce1">9, 2, 1, 2</column>
+<column name="lout_15_we0">9, 2, 1, 2</column>
+<column name="lout_15_we1">9, 2, 1, 2</column>
+<column name="lout_16_address0">21, 4, 8, 32</column>
+<column name="lout_16_ce0">21, 4, 1, 4</column>
+<column name="lout_16_ce1">9, 2, 1, 2</column>
+<column name="lout_16_we0">9, 2, 1, 2</column>
+<column name="lout_16_we1">9, 2, 1, 2</column>
+<column name="lout_17_address0">21, 4, 8, 32</column>
+<column name="lout_17_ce0">21, 4, 1, 4</column>
+<column name="lout_17_ce1">9, 2, 1, 2</column>
+<column name="lout_17_we0">9, 2, 1, 2</column>
+<column name="lout_17_we1">9, 2, 1, 2</column>
+<column name="lout_18_address0">21, 4, 8, 32</column>
+<column name="lout_18_ce0">21, 4, 1, 4</column>
+<column name="lout_18_ce1">9, 2, 1, 2</column>
+<column name="lout_18_we0">9, 2, 1, 2</column>
+<column name="lout_18_we1">9, 2, 1, 2</column>
+<column name="lout_19_address0">21, 4, 8, 32</column>
+<column name="lout_19_ce0">21, 4, 1, 4</column>
+<column name="lout_19_ce1">9, 2, 1, 2</column>
+<column name="lout_19_we0">9, 2, 1, 2</column>
+<column name="lout_19_we1">9, 2, 1, 2</column>
+<column name="lout_1_address0">21, 4, 8, 32</column>
+<column name="lout_1_ce0">21, 4, 1, 4</column>
+<column name="lout_1_ce1">9, 2, 1, 2</column>
+<column name="lout_1_we0">9, 2, 1, 2</column>
+<column name="lout_1_we1">9, 2, 1, 2</column>
+<column name="lout_20_address0">21, 4, 8, 32</column>
+<column name="lout_20_ce0">21, 4, 1, 4</column>
+<column name="lout_20_ce1">9, 2, 1, 2</column>
+<column name="lout_20_we0">9, 2, 1, 2</column>
+<column name="lout_20_we1">9, 2, 1, 2</column>
+<column name="lout_21_address0">21, 4, 8, 32</column>
+<column name="lout_21_ce0">21, 4, 1, 4</column>
+<column name="lout_21_ce1">9, 2, 1, 2</column>
+<column name="lout_21_we0">9, 2, 1, 2</column>
+<column name="lout_21_we1">9, 2, 1, 2</column>
+<column name="lout_22_address0">21, 4, 8, 32</column>
+<column name="lout_22_ce0">21, 4, 1, 4</column>
+<column name="lout_22_ce1">9, 2, 1, 2</column>
+<column name="lout_22_we0">9, 2, 1, 2</column>
+<column name="lout_22_we1">9, 2, 1, 2</column>
+<column name="lout_23_address0">21, 4, 8, 32</column>
+<column name="lout_23_ce0">21, 4, 1, 4</column>
+<column name="lout_23_ce1">9, 2, 1, 2</column>
+<column name="lout_23_we0">9, 2, 1, 2</column>
+<column name="lout_23_we1">9, 2, 1, 2</column>
+<column name="lout_24_address0">21, 4, 8, 32</column>
+<column name="lout_24_ce0">21, 4, 1, 4</column>
+<column name="lout_24_ce1">9, 2, 1, 2</column>
+<column name="lout_24_we0">9, 2, 1, 2</column>
+<column name="lout_24_we1">9, 2, 1, 2</column>
+<column name="lout_25_address0">21, 4, 8, 32</column>
+<column name="lout_25_ce0">21, 4, 1, 4</column>
+<column name="lout_25_ce1">9, 2, 1, 2</column>
+<column name="lout_25_we0">9, 2, 1, 2</column>
+<column name="lout_25_we1">9, 2, 1, 2</column>
+<column name="lout_26_address0">21, 4, 8, 32</column>
+<column name="lout_26_ce0">21, 4, 1, 4</column>
+<column name="lout_26_ce1">9, 2, 1, 2</column>
+<column name="lout_26_we0">9, 2, 1, 2</column>
+<column name="lout_26_we1">9, 2, 1, 2</column>
+<column name="lout_27_address0">21, 4, 8, 32</column>
+<column name="lout_27_ce0">21, 4, 1, 4</column>
+<column name="lout_27_ce1">9, 2, 1, 2</column>
+<column name="lout_27_we0">9, 2, 1, 2</column>
+<column name="lout_27_we1">9, 2, 1, 2</column>
+<column name="lout_28_address0">21, 4, 8, 32</column>
+<column name="lout_28_ce0">21, 4, 1, 4</column>
+<column name="lout_28_ce1">9, 2, 1, 2</column>
+<column name="lout_28_we0">9, 2, 1, 2</column>
+<column name="lout_28_we1">9, 2, 1, 2</column>
+<column name="lout_29_address0">21, 4, 8, 32</column>
+<column name="lout_29_ce0">21, 4, 1, 4</column>
+<column name="lout_29_ce1">9, 2, 1, 2</column>
+<column name="lout_29_we0">9, 2, 1, 2</column>
+<column name="lout_29_we1">9, 2, 1, 2</column>
+<column name="lout_2_address0">21, 4, 8, 32</column>
+<column name="lout_2_ce0">21, 4, 1, 4</column>
+<column name="lout_2_ce1">9, 2, 1, 2</column>
+<column name="lout_2_we0">9, 2, 1, 2</column>
+<column name="lout_2_we1">9, 2, 1, 2</column>
+<column name="lout_30_address0">21, 4, 8, 32</column>
+<column name="lout_30_ce0">21, 4, 1, 4</column>
+<column name="lout_30_ce1">9, 2, 1, 2</column>
+<column name="lout_30_we0">9, 2, 1, 2</column>
+<column name="lout_30_we1">9, 2, 1, 2</column>
+<column name="lout_31_address0">21, 4, 8, 32</column>
+<column name="lout_31_ce0">21, 4, 1, 4</column>
+<column name="lout_31_ce1">9, 2, 1, 2</column>
+<column name="lout_31_we0">9, 2, 1, 2</column>
+<column name="lout_31_we1">9, 2, 1, 2</column>
+<column name="lout_3_address0">21, 4, 8, 32</column>
+<column name="lout_3_ce0">21, 4, 1, 4</column>
+<column name="lout_3_ce1">9, 2, 1, 2</column>
+<column name="lout_3_we0">9, 2, 1, 2</column>
+<column name="lout_3_we1">9, 2, 1, 2</column>
+<column name="lout_4_address0">21, 4, 8, 32</column>
+<column name="lout_4_ce0">21, 4, 1, 4</column>
+<column name="lout_4_ce1">9, 2, 1, 2</column>
+<column name="lout_4_we0">9, 2, 1, 2</column>
+<column name="lout_4_we1">9, 2, 1, 2</column>
+<column name="lout_5_address0">21, 4, 8, 32</column>
+<column name="lout_5_ce0">21, 4, 1, 4</column>
+<column name="lout_5_ce1">9, 2, 1, 2</column>
+<column name="lout_5_we0">9, 2, 1, 2</column>
+<column name="lout_5_we1">9, 2, 1, 2</column>
+<column name="lout_6_address0">21, 4, 8, 32</column>
+<column name="lout_6_ce0">21, 4, 1, 4</column>
+<column name="lout_6_ce1">9, 2, 1, 2</column>
+<column name="lout_6_we0">9, 2, 1, 2</column>
+<column name="lout_6_we1">9, 2, 1, 2</column>
+<column name="lout_7_address0">21, 4, 8, 32</column>
+<column name="lout_7_ce0">21, 4, 1, 4</column>
+<column name="lout_7_ce1">9, 2, 1, 2</column>
+<column name="lout_7_we0">9, 2, 1, 2</column>
+<column name="lout_7_we1">9, 2, 1, 2</column>
+<column name="lout_8_address0">21, 4, 8, 32</column>
+<column name="lout_8_ce0">21, 4, 1, 4</column>
+<column name="lout_8_ce1">9, 2, 1, 2</column>
+<column name="lout_8_we0">9, 2, 1, 2</column>
+<column name="lout_8_we1">9, 2, 1, 2</column>
+<column name="lout_9_address0">21, 4, 8, 32</column>
+<column name="lout_9_ce0">21, 4, 1, 4</column>
+<column name="lout_9_ce1">9, 2, 1, 2</column>
+<column name="lout_9_we0">9, 2, 1, 2</column>
+<column name="lout_9_we1">9, 2, 1, 2</column>
+</table>
+</item>
+<item name = "Register"><table name="" hasTotal="1">
+<keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
+<column name="ap_CS_fsm">6, 0, 6, 0</column>
+<column name="ap_sync_reg_grp_cal_initial_fu_396_ap_done">1, 0, 1, 0</column>
+<column name="ap_sync_reg_grp_cal_initial_fu_396_ap_ready">1, 0, 1, 0</column>
+<column name="ap_sync_reg_grp_stream_cal_fu_288_ap_done">1, 0, 1, 0</column>
+<column name="ap_sync_reg_grp_stream_cal_fu_288_ap_ready">1, 0, 1, 0</column>
+<column name="grp_cal_initial_fu_396_ap_start_reg">1, 0, 1, 0</column>
+<column name="grp_stream_cal_fu_288_ap_start_reg">1, 0, 1, 0</column>
+<column name="grp_write_out_fu_358_ap_start_reg">1, 0, 1, 0</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Interface" level="0">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">RTL Ports, Dir, Bits, Protocol, Source Object, C Type</keys>
+<column name="ap_clk">in, 1, ap_ctrl_hs, cal_gemm, return value</column>
+<column name="ap_rst_n">in, 1, ap_ctrl_hs, cal_gemm, return value</column>
+<column name="ap_start">in, 1, ap_ctrl_hs, cal_gemm, return value</column>
+<column name="ap_done">out, 1, ap_ctrl_hs, cal_gemm, return value</column>
+<column name="ap_idle">out, 1, ap_ctrl_hs, cal_gemm, return value</column>
+<column name="ap_ready">out, 1, ap_ctrl_hs, cal_gemm, return value</column>
+<column name="A_dout">in, 32, ap_fifo, A, pointer</column>
+<column name="A_empty_n">in, 1, ap_fifo, A, pointer</column>
+<column name="A_read">out, 1, ap_fifo, A, pointer</column>
+<column name="B_dout">in, 32, ap_fifo, B, pointer</column>
+<column name="B_empty_n">in, 1, ap_fifo, B, pointer</column>
+<column name="B_read">out, 1, ap_fifo, B, pointer</column>
+<column name="C_din">out, 32, ap_fifo, C, pointer</column>
+<column name="C_full_n">in, 1, ap_fifo, C, pointer</column>
+<column name="C_write">out, 1, ap_fifo, C, pointer</column>
+</table>
+</item>
+</section>
+
+<section name = "Critical Path" level="0">
+<item name = "Max Delay">3.25</item>
+<item name = "Critical Path Table"><table name="Critical Path Table" hasTotal="0">
+<keys size="15">Name, Operator, Delay, Accumulated Delay, Store Source, Resource, Core, Interface, Type, Port, Array, Scope, Pointer, Callee, Phi Node</keys>
+<column name="'la[0]', /home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:93">alloca, 3.25, 3.25, -, -, -, -, -, -, -, -, -, -, -</column>
+<column name="/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:101">call, 0.00, 3.25, -, -, -, -, -, -, -, -, -, cal_initial, -</column>
+</table>
+</item>
+</section>
+</profile>

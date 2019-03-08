@@ -1,0 +1,553 @@
+(c) Copyright 2012-2018 Xilinx, Inc. All Rights Reserved.
+#-----------------------------------------------------------
+# Tool version  : sds++ 2018.2 SW Build 2258646 on Thu Jun 14 20:03:40 MDT 2018
+# Start time    : Fri Mar 08 14:10:05 KST 2019
+# Command line  : sds++ -sds-pf zed -target-os linux -Wall -O3 -c -I/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/libs/sds_utils/ -Wno-unused-label -Wall -Wno-unused-result -Wno-unknown-pragmas -Wfatal-errors -fPIC -DSDSOC -o /home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/build/zed_linux_hw/src/kernel.o /home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp -sds-hw cal_gemm kernel.cpp -sds-end
+# Log file      : /home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/build/zed_linux_hw/_sds/reports/sds_kernel.log
+# Journal file  : /home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/build/zed_linux_hw/_sds/reports/sds_kernel.jou
+# Report file   : /home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/build/zed_linux_hw/_sds/reports/sds_kernel.rpt
+#-----------------------------------------------------------
+
+Create data motion intermediate representation
+/opt/Xilinx/SDx/2018.2/bin/clang_wrapper -I/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/libs/sds_utils/ -Wall -Wno-unused-label -Wall -Wno-unused-result -Wno-unknown-pragmas -Wfatal-errors -fPIC -DSDSOC -D __SDSCC__ -target arm-linux-gnueabihf -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -O0 -g     -I /opt/Xilinx/SDx/2018.2/target/aarch32-linux/include  -D HLS_NO_XIL_FPO_LIB  -I /opt/Xilinx/Vivado/2018.2/include   -I/opt/Xilinx/SDK/2018.2/gnu/aarch32/lin/gcc-arm-linux-gnueabi/arm-linux-gnueabihf/include/c++/7.2.1 -I/opt/Xilinx/SDK/2018.2/gnu/aarch32/lin/gcc-arm-linux-gnueabi/arm-linux-gnueabihf/include/c++/7.2.1/arm-linux-gnueabihf -I/opt/Xilinx/SDK/2018.2/gnu/aarch32/lin/gcc-arm-linux-gnueabi/arm-linux-gnueabihf/include/c++/7.2.1/backward -I/opt/Xilinx/SDK/2018.2/gnu/aarch32/lin/gcc-arm-linux-gnueabi/lib/gcc/arm-linux-gnueabihf/7.2.1/include -I/opt/Xilinx/SDK/2018.2/gnu/aarch32/lin/gcc-arm-linux-gnueabi/lib/gcc/arm-linux-gnueabihf/7.2.1/include-fixed -I/opt/Xilinx/SDK/2018.2/gnu/aarch32/lin/gcc-arm-linux-gnueabi/arm-linux-gnueabihf/include -I/opt/Xilinx/SDK/2018.2/gnu/aarch32/lin/gcc-arm-linux-gnueabi/arm-linux-gnueabihf/libc/usr/include  -std=c++11 -emit-llvm -S /home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp -o /home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/build/zed_linux_hw/src/kernel.s
+Performing accelerator source linting for cal_gemm
+/opt/Xilinx/SDx/2018.2/bin/sdslint -target cortex-a9 -func "cal_gemm" /home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp -- -c -I/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/libs/sds_utils/ -Wall -Wno-unused-label -Wall -Wno-unused-result -Wno-unknown-pragmas -Wfatal-errors -fPIC -DSDSOC -D __SDSCC__ -target arm-linux-gnueabihf -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -O0 -g -w    -I /opt/Xilinx/SDx/2018.2/target/aarch32-linux/include  -D HLS_NO_XIL_FPO_LIB  -I /opt/Xilinx/Vivado/2018.2/include   -I/opt/Xilinx/SDK/2018.2/gnu/aarch32/lin/gcc-arm-linux-gnueabi/arm-linux-gnueabihf/include/c++/7.2.1 -I/opt/Xilinx/SDK/2018.2/gnu/aarch32/lin/gcc-arm-linux-gnueabi/arm-linux-gnueabihf/include/c++/7.2.1/arm-linux-gnueabihf -I/opt/Xilinx/SDK/2018.2/gnu/aarch32/lin/gcc-arm-linux-gnueabi/arm-linux-gnueabihf/include/c++/7.2.1/backward -I/opt/Xilinx/SDK/2018.2/gnu/aarch32/lin/gcc-arm-linux-gnueabi/lib/gcc/arm-linux-gnueabihf/7.2.1/include -I/opt/Xilinx/SDK/2018.2/gnu/aarch32/lin/gcc-arm-linux-gnueabi/lib/gcc/arm-linux-gnueabihf/7.2.1/include-fixed -I/opt/Xilinx/SDK/2018.2/gnu/aarch32/lin/gcc-arm-linux-gnueabi/arm-linux-gnueabihf/include -I/opt/Xilinx/SDK/2018.2/gnu/aarch32/lin/gcc-arm-linux-gnueabi/arm-linux-gnueabihf/libc/usr/include  -std=c++11
+arm-linux-gnueabihf-g++ -c /home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/build/zed_linux_hw/_sds/swstubs/kernel.cpp -o /home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/build/zed_linux_hw/_sds/swstubs/kernel.o
+arm-linux-gnueabihf-objcopy --add-section .xdinfo=/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/build/zed_linux_hw/_sds/swstubs/kernel.o.xml /home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/build/zed_linux_hw/_sds/swstubs/kernel.o
+Performing pragma generation
+/opt/Xilinx/SDx/2018.2/bin/clang_wrapper -E -I/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/libs/sds_utils -Wall -Wno-unused-label -Wall -Wno-unused-result -Wno-unknown-pragmas -Wfatal-errors -fPIC -DSDSOC -D __SDSCC__ -m32 -D HLS_NO_XIL_FPO_LIB -I /opt/Xilinx/SDx/2018.2/target/aarch32-linux/include -I/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src -D __SDSVHLS__ -target arm-linux-gnueabihf -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -O0 -g -w    -I /opt/Xilinx/SDx/2018.2/target/aarch32-linux/include  -D HLS_NO_XIL_FPO_LIB  -I /opt/Xilinx/Vivado/2018.2/include   -I/opt/Xilinx/SDK/2018.2/gnu/aarch32/lin/gcc-arm-linux-gnueabi/arm-linux-gnueabihf/include/c++/7.2.1 -I/opt/Xilinx/SDK/2018.2/gnu/aarch32/lin/gcc-arm-linux-gnueabi/arm-linux-gnueabihf/include/c++/7.2.1/arm-linux-gnueabihf -I/opt/Xilinx/SDK/2018.2/gnu/aarch32/lin/gcc-arm-linux-gnueabi/arm-linux-gnueabihf/include/c++/7.2.1/backward -I/opt/Xilinx/SDK/2018.2/gnu/aarch32/lin/gcc-arm-linux-gnueabi/lib/gcc/arm-linux-gnueabihf/7.2.1/include -I/opt/Xilinx/SDK/2018.2/gnu/aarch32/lin/gcc-arm-linux-gnueabi/lib/gcc/arm-linux-gnueabihf/7.2.1/include-fixed -I/opt/Xilinx/SDK/2018.2/gnu/aarch32/lin/gcc-arm-linux-gnueabi/arm-linux-gnueabihf/include -I/opt/Xilinx/SDK/2018.2/gnu/aarch32/lin/gcc-arm-linux-gnueabi/arm-linux-gnueabihf/libc/usr/include  -std=c++11 /home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp -o /home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/build/zed_linux_hw/_sds/vhls/kernel_pp.cpp
+/opt/Xilinx/SDx/2018.2/bin/pragma_gen  -func "cal_gemm"   -tcl /home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/build/zed_linux_hw/_sds/vhls/cal_gemm.tcl   /home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/build/zed_linux_hw/_sds/vhls/kernel_pp.cpp -multi_aximm   --  -c  -D __SDSVHLS__ -I/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/libs/sds_utils -Wall -O3 -Wno-unused-label -Wall -Wno-unused-result -Wno-unknown-pragmas -Wfatal-errors -fPIC -DSDSOC -D __SDSCC__ -m32    -D HLS_NO_XIL_FPO_LIB  -I /opt/Xilinx/SDx/2018.2/target/aarch32-linux/include -I/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src  -target arm-linux-gnueabihf -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -O0 -g -w    -I /opt/Xilinx/SDx/2018.2/target/aarch32-linux/include  -D HLS_NO_XIL_FPO_LIB  -I /opt/Xilinx/Vivado/2018.2/include   -I/opt/Xilinx/SDK/2018.2/gnu/aarch32/lin/gcc-arm-linux-gnueabi/arm-linux-gnueabihf/include/c++/7.2.1 -I/opt/Xilinx/SDK/2018.2/gnu/aarch32/lin/gcc-arm-linux-gnueabi/arm-linux-gnueabihf/include/c++/7.2.1/arm-linux-gnueabihf -I/opt/Xilinx/SDK/2018.2/gnu/aarch32/lin/gcc-arm-linux-gnueabi/arm-linux-gnueabihf/include/c++/7.2.1/backward -I/opt/Xilinx/SDK/2018.2/gnu/aarch32/lin/gcc-arm-linux-gnueabi/lib/gcc/arm-linux-gnueabihf/7.2.1/include -I/opt/Xilinx/SDK/2018.2/gnu/aarch32/lin/gcc-arm-linux-gnueabi/lib/gcc/arm-linux-gnueabihf/7.2.1/include-fixed -I/opt/Xilinx/SDK/2018.2/gnu/aarch32/lin/gcc-arm-linux-gnueabi/arm-linux-gnueabihf/include -I/opt/Xilinx/SDK/2018.2/gnu/aarch32/lin/gcc-arm-linux-gnueabi/arm-linux-gnueabihf/libc/usr/include  -std=c++11
+INFO: [PragmaGen 83-3231] Successfully generated tcl script: /home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/build/zed_linux_hw/_sds/vhls/cal_gemm.tcl
+Moving function cal_gemm to Programmable Logic
+/opt/Xilinx/Vivado/2018.2/bin/vivado_hls /home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/build/zed_linux_hw/_sds/vhls/cal_gemm_run.tcl -l cal_gemm_vivado_hls.log
+
+****** Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2018.2 (64-bit)
+  **** SW Build 2258646 on Thu Jun 14 20:02:38 MDT 2018
+  **** IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+source /opt/Xilinx/Vivado/2018.2/scripts/vivado_hls/hls.tcl -notrace
+INFO: [HLS 200-10] Running '/opt/Xilinx/Vivado/2018.2/bin/unwrapped/lnx64.o/vivado_hls'
+INFO: [HLS 200-10] For user 'sdsoc' on host 'sdsoc-Z97X-UD3H' (Linux_x86_64 version 4.7.0.intel.r5.0) on Fri Mar 08 14:10:07 KST 2019
+INFO: [HLS 200-10] On os Ubuntu 14.04.5 LTS
+INFO: [HLS 200-10] In directory '/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/build/zed_linux_hw/_sds/vhls'
+INFO: [HLS 200-10] Creating and opening project '/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/build/zed_linux_hw/_sds/vhls/cal_gemm'.
+INFO: [HLS 200-10] Adding design file '/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp' to the project
+INFO: [HLS 200-10] Creating and opening solution '/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/build/zed_linux_hw/_sds/vhls/cal_gemm/solution'.
+INFO: [HLS 200-10] Cleaning up the solution database.
+INFO: [HLS 200-10] Setting target device to ' xc7z020clg484-1 '
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 2.7ns.
+INFO: [HLS 200-10] Analyzing design file '/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp' ... 
+WARNING: [HLS 214-114] Only function calls and local variable declarations are allowed in a dataflow region: /home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:54:5
+WARNING: [HLS 214-111] Static variables and non-static stream cannot be used inside a dataflow region: /home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:69:24
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 377.453 ; gain = 12.594 ; free physical = 26241 ; free virtual = 62746
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 377.453 ; gain = 12.594 ; free physical = 26241 ; free virtual = 62746
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [XFORM 203-603] Inlining function 'read_B' into 'stream_cal' (/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:73).
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 377.453 ; gain = 12.594 ; free physical = 26240 ; free virtual = 62744
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 377.453 ; gain = 12.594 ; free physical = 26239 ; free virtual = 62744
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'Loop-1.1' (/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:55) in function 'calulation' for pipelining.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'Loop-1' (/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:16) in function 'out_initial' for pipelining.
+INFO: [XFORM 203-501] Unrolling loop 'Loop-1.1.1' (/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:59) in function 'calulation' completely.
+INFO: [XFORM 203-501] Unrolling loop 'Loop-1.1' (/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:18) in function 'out_initial' completely.
+INFO: [XFORM 203-101] Partitioning array 'la' (/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:93) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'lout' (/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:97) in dimension 1 completely.
+INFO: [XFORM 203-721] Changing loop 'Loop_1_proc' (/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:54) to a process function for dataflow in function 'calulation'.
+INFO: [XFORM 203-721] Changing loop 'Loop_1_proc' (/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:43) to a process function for dataflow in function 'stream_cal'.
+WARNING: [XFORM 203-713] All the elements of global array 'la[0]' should be updated in process function 'read_A', otherwise it may not be synthesized correctly.
+WARNING: [XFORM 203-713] All the elements of global array 'la[1]' should be updated in process function 'read_A', otherwise it may not be synthesized correctly.
+WARNING: [XFORM 203-713] All the elements of global array 'la[2]' should be updated in process function 'read_A', otherwise it may not be synthesized correctly.
+WARNING: [XFORM 203-713] All the elements of global array 'la[3]' should be updated in process function 'read_A', otherwise it may not be synthesized correctly.
+WARNING: [XFORM 203-713] All the elements of global array 'la[4]' should be updated in process function 'read_A', otherwise it may not be synthesized correctly.
+WARNING: [XFORM 203-713] All the elements of global array 'la[5]' should be updated in process function 'read_A', otherwise it may not be synthesized correctly.
+WARNING: [XFORM 203-713] All the elements of global array 'la[6]' should be updated in process function 'read_A', otherwise it may not be synthesized correctly.
+WARNING: [XFORM 203-713] All the elements of global array 'la[7]' should be updated in process function 'read_A', otherwise it may not be synthesized correctly.
+WARNING: [XFORM 203-713] All the elements of global array 'la[8]' should be updated in process function 'read_A', otherwise it may not be synthesized correctly.
+WARNING: [XFORM 203-713] All the elements of global array 'la[9]' should be updated in process function 'read_A', otherwise it may not be synthesized correctly.
+WARNING: [XFORM 203-713] All the elements of global array 'la[10]' should be updated in process function 'read_A', otherwise it may not be synthesized correctly.
+WARNING: [XFORM 203-713] All the elements of global array 'la[11]' should be updated in process function 'read_A', otherwise it may not be synthesized correctly.
+WARNING: [XFORM 203-713] All the elements of global array 'la[12]' should be updated in process function 'read_A', otherwise it may not be synthesized correctly.
+WARNING: [XFORM 203-713] All the elements of global array 'la[13]' should be updated in process function 'read_A', otherwise it may not be synthesized correctly.
+WARNING: [XFORM 203-713] All the elements of global array 'la[14]' should be updated in process function 'read_A', otherwise it may not be synthesized correctly.
+WARNING: [XFORM 203-713] All the elements of global array 'la[15]' should be updated in process function 'read_A', otherwise it may not be synthesized correctly.
+WARNING: [XFORM 203-713] All the elements of global array 'la[16]' should be updated in process function 'read_A', otherwise it may not be synthesized correctly.
+WARNING: [XFORM 203-713] All the elements of global array 'la[17]' should be updated in process function 'read_A', otherwise it may not be synthesized correctly.
+WARNING: [XFORM 203-713] All the elements of global array 'la[18]' should be updated in process function 'read_A', otherwise it may not be synthesized correctly.
+WARNING: [XFORM 203-713] All the elements of global array 'la[19]' should be updated in process function 'read_A', otherwise it may not be synthesized correctly.
+WARNING: [XFORM 203-713] All the elements of global array 'la[20]' should be updated in process function 'read_A', otherwise it may not be synthesized correctly.
+WARNING: [XFORM 203-713] All the elements of global array 'la[21]' should be updated in process function 'read_A', otherwise it may not be synthesized correctly.
+WARNING: [XFORM 203-713] All the elements of global array 'la[22]' should be updated in process function 'read_A', otherwise it may not be synthesized correctly.
+WARNING: [XFORM 203-713] All the elements of global array 'la[23]' should be updated in process function 'read_A', otherwise it may not be synthesized correctly.
+WARNING: [XFORM 203-713] All the elements of global array 'la[24]' should be updated in process function 'read_A', otherwise it may not be synthesized correctly.
+WARNING: [XFORM 203-713] All the elements of global array 'la[25]' should be updated in process function 'read_A', otherwise it may not be synthesized correctly.
+WARNING: [XFORM 203-713] All the elements of global array 'la[26]' should be updated in process function 'read_A', otherwise it may not be synthesized correctly.
+WARNING: [XFORM 203-713] All the elements of global array 'la[27]' should be updated in process function 'read_A', otherwise it may not be synthesized correctly.
+WARNING: [XFORM 203-713] All the elements of global array 'la[28]' should be updated in process function 'read_A', otherwise it may not be synthesized correctly.
+WARNING: [XFORM 203-713] All the elements of global array 'la[29]' should be updated in process function 'read_A', otherwise it may not be synthesized correctly.
+WARNING: [XFORM 203-713] All the elements of global array 'la[30]' should be updated in process function 'read_A', otherwise it may not be synthesized correctly.
+WARNING: [XFORM 203-713] All the elements of global array 'la[31]' should be updated in process function 'read_A', otherwise it may not be synthesized correctly.
+WARNING: [XFORM 203-713] All the elements of global array 'lout[0]' should be updated in process function 'calulation_Loop_1_proc19', otherwise it may not be synthesized correctly.
+WARNING: [XFORM 203-713] All the elements of global array 'lout[1]' should be updated in process function 'calulation_Loop_1_proc19', otherwise it may not be synthesized correctly.
+WARNING: [XFORM 203-713] All the elements of global array 'lout[2]' should be updated in process function 'calulation_Loop_1_proc19', otherwise it may not be synthesized correctly.
+WARNING: [XFORM 203-713] All the elements of global array 'lout[3]' should be updated in process function 'calulation_Loop_1_proc19', otherwise it may not be synthesized correctly.
+WARNING: [XFORM 203-713] All the elements of global array 'lout[4]' should be updated in process function 'calulation_Loop_1_proc19', otherwise it may not be synthesized correctly.
+WARNING: [XFORM 203-713] All the elements of global array 'lout[5]' should be updated in process function 'calulation_Loop_1_proc19', otherwise it may not be synthesized correctly.
+WARNING: [XFORM 203-713] All the elements of global array 'lout[6]' should be updated in process function 'calulation_Loop_1_proc19', otherwise it may not be synthesized correctly.
+WARNING: [XFORM 203-713] All the elements of global array 'lout[7]' should be updated in process function 'calulation_Loop_1_proc19', otherwise it may not be synthesized correctly.
+WARNING: [XFORM 203-713] All the elements of global array 'lout[8]' should be updated in process function 'calulation_Loop_1_proc19', otherwise it may not be synthesized correctly.
+WARNING: [XFORM 203-713] All the elements of global array 'lout[9]' should be updated in process function 'calulation_Loop_1_proc19', otherwise it may not be synthesized correctly.
+WARNING: [XFORM 203-713] All the elements of global array 'lout[10]' should be updated in process function 'calulation_Loop_1_proc19', otherwise it may not be synthesized correctly.
+WARNING: [XFORM 203-713] All the elements of global array 'lout[11]' should be updated in process function 'calulation_Loop_1_proc19', otherwise it may not be synthesized correctly.
+WARNING: [XFORM 203-713] All the elements of global array 'lout[12]' should be updated in process function 'calulation_Loop_1_proc19', otherwise it may not be synthesized correctly.
+WARNING: [XFORM 203-713] All the elements of global array 'lout[13]' should be updated in process function 'calulation_Loop_1_proc19', otherwise it may not be synthesized correctly.
+WARNING: [XFORM 203-713] All the elements of global array 'lout[14]' should be updated in process function 'calulation_Loop_1_proc19', otherwise it may not be synthesized correctly.
+WARNING: [XFORM 203-713] All the elements of global array 'lout[15]' should be updated in process function 'calulation_Loop_1_proc19', otherwise it may not be synthesized correctly.
+WARNING: [XFORM 203-713] All the elements of global array 'lout[16]' should be updated in process function 'calulation_Loop_1_proc19', otherwise it may not be synthesized correctly.
+WARNING: [XFORM 203-713] All the elements of global array 'lout[17]' should be updated in process function 'calulation_Loop_1_proc19', otherwise it may not be synthesized correctly.
+WARNING: [XFORM 203-713] All the elements of global array 'lout[18]' should be updated in process function 'calulation_Loop_1_proc19', otherwise it may not be synthesized correctly.
+WARNING: [XFORM 203-713] All the elements of global array 'lout[19]' should be updated in process function 'calulation_Loop_1_proc19', otherwise it may not be synthesized correctly.
+WARNING: [XFORM 203-713] All the elements of global array 'lout[20]' should be updated in process function 'calulation_Loop_1_proc19', otherwise it may not be synthesized correctly.
+WARNING: [XFORM 203-713] All the elements of global array 'lout[21]' should be updated in process function 'calulation_Loop_1_proc19', otherwise it may not be synthesized correctly.
+WARNING: [XFORM 203-713] All the elements of global array 'lout[22]' should be updated in process function 'calulation_Loop_1_proc19', otherwise it may not be synthesized correctly.
+WARNING: [XFORM 203-713] All the elements of global array 'lout[23]' should be updated in process function 'calulation_Loop_1_proc19', otherwise it may not be synthesized correctly.
+WARNING: [XFORM 203-713] All the elements of global array 'lout[24]' should be updated in process function 'calulation_Loop_1_proc19', otherwise it may not be synthesized correctly.
+WARNING: [XFORM 203-713] All the elements of global array 'lout[25]' should be updated in process function 'calulation_Loop_1_proc19', otherwise it may not be synthesized correctly.
+WARNING: [XFORM 203-713] All the elements of global array 'lout[26]' should be updated in process function 'calulation_Loop_1_proc19', otherwise it may not be synthesized correctly.
+WARNING: [XFORM 203-713] All the elements of global array 'lout[27]' should be updated in process function 'calulation_Loop_1_proc19', otherwise it may not be synthesized correctly.
+WARNING: [XFORM 203-713] All the elements of global array 'lout[28]' should be updated in process function 'calulation_Loop_1_proc19', otherwise it may not be synthesized correctly.
+WARNING: [XFORM 203-713] All the elements of global array 'lout[29]' should be updated in process function 'calulation_Loop_1_proc19', otherwise it may not be synthesized correctly.
+WARNING: [XFORM 203-713] All the elements of global array 'lout[30]' should be updated in process function 'calulation_Loop_1_proc19', otherwise it may not be synthesized correctly.
+WARNING: [XFORM 203-713] All the elements of global array 'lout[31]' should be updated in process function 'calulation_Loop_1_proc19', otherwise it may not be synthesized correctly.
+WARNING: [XFORM 203-713] Reading dataflow channel 'la[0]' in the middle of dataflow may stall the dataflow pipeline:
+WARNING: [XFORM 203-713] Argument 'la[0]' has read operations in process function 'calulation'.
+WARNING: [XFORM 203-713] Reading dataflow channel 'la[1]' in the middle of dataflow may stall the dataflow pipeline:
+WARNING: [XFORM 203-713] Argument 'la[1]' has read operations in process function 'calulation'.
+WARNING: [XFORM 203-713] Reading dataflow channel 'la[2]' in the middle of dataflow may stall the dataflow pipeline:
+WARNING: [XFORM 203-713] Argument 'la[2]' has read operations in process function 'calulation'.
+WARNING: [XFORM 203-713] Reading dataflow channel 'la[3]' in the middle of dataflow may stall the dataflow pipeline:
+WARNING: [XFORM 203-713] Argument 'la[3]' has read operations in process function 'calulation'.
+WARNING: [XFORM 203-713] Reading dataflow channel 'la[4]' in the middle of dataflow may stall the dataflow pipeline:
+WARNING: [XFORM 203-713] Argument 'la[4]' has read operations in process function 'calulation'.
+WARNING: [XFORM 203-713] Reading dataflow channel 'la[5]' in the middle of dataflow may stall the dataflow pipeline:
+WARNING: [XFORM 203-713] Argument 'la[5]' has read operations in process function 'calulation'.
+WARNING: [XFORM 203-713] Reading dataflow channel 'la[6]' in the middle of dataflow may stall the dataflow pipeline:
+WARNING: [XFORM 203-713] Argument 'la[6]' has read operations in process function 'calulation'.
+WARNING: [XFORM 203-713] Reading dataflow channel 'la[7]' in the middle of dataflow may stall the dataflow pipeline:
+WARNING: [XFORM 203-713] Argument 'la[7]' has read operations in process function 'calulation'.
+WARNING: [XFORM 203-713] Reading dataflow channel 'la[8]' in the middle of dataflow may stall the dataflow pipeline:
+WARNING: [XFORM 203-713] Argument 'la[8]' has read operations in process function 'calulation'.
+WARNING: [XFORM 203-713] Reading dataflow channel 'la[9]' in the middle of dataflow may stall the dataflow pipeline:
+WARNING: [XFORM 203-713] Argument 'la[9]' has read operations in process function 'calulation'.
+WARNING: [XFORM 203-713] Reading dataflow channel 'la[10]' in the middle of dataflow may stall the dataflow pipeline:
+WARNING: [XFORM 203-713] Argument 'la[10]' has read operations in process function 'calulation'.
+WARNING: [XFORM 203-713] Reading dataflow channel 'la[11]' in the middle of dataflow may stall the dataflow pipeline:
+WARNING: [XFORM 203-713] Argument 'la[11]' has read operations in process function 'calulation'.
+WARNING: [XFORM 203-713] Reading dataflow channel 'la[12]' in the middle of dataflow may stall the dataflow pipeline:
+WARNING: [XFORM 203-713] Argument 'la[12]' has read operations in process function 'calulation'.
+WARNING: [XFORM 203-713] Reading dataflow channel 'la[13]' in the middle of dataflow may stall the dataflow pipeline:
+WARNING: [XFORM 203-713] Argument 'la[13]' has read operations in process function 'calulation'.
+WARNING: [XFORM 203-713] Reading dataflow channel 'la[14]' in the middle of dataflow may stall the dataflow pipeline:
+WARNING: [XFORM 203-713] Argument 'la[14]' has read operations in process function 'calulation'.
+WARNING: [XFORM 203-713] Reading dataflow channel 'la[15]' in the middle of dataflow may stall the dataflow pipeline:
+WARNING: [XFORM 203-713] Argument 'la[15]' has read operations in process function 'calulation'.
+WARNING: [XFORM 203-713] Reading dataflow channel 'la[16]' in the middle of dataflow may stall the dataflow pipeline:
+WARNING: [XFORM 203-713] Argument 'la[16]' has read operations in process function 'calulation'.
+WARNING: [XFORM 203-713] Reading dataflow channel 'la[17]' in the middle of dataflow may stall the dataflow pipeline:
+WARNING: [XFORM 203-713] Argument 'la[17]' has read operations in process function 'calulation'.
+WARNING: [XFORM 203-713] Reading dataflow channel 'la[18]' in the middle of dataflow may stall the dataflow pipeline:
+WARNING: [XFORM 203-713] Argument 'la[18]' has read operations in process function 'calulation'.
+WARNING: [XFORM 203-713] Reading dataflow channel 'la[19]' in the middle of dataflow may stall the dataflow pipeline:
+WARNING: [XFORM 203-713] Argument 'la[19]' has read operations in process function 'calulation'.
+WARNING: [XFORM 203-713] Reading dataflow channel 'la[20]' in the middle of dataflow may stall the dataflow pipeline:
+WARNING: [XFORM 203-713] Argument 'la[20]' has read operations in process function 'calulation'.
+WARNING: [XFORM 203-713] Reading dataflow channel 'la[21]' in the middle of dataflow may stall the dataflow pipeline:
+WARNING: [XFORM 203-713] Argument 'la[21]' has read operations in process function 'calulation'.
+WARNING: [XFORM 203-713] Reading dataflow channel 'la[22]' in the middle of dataflow may stall the dataflow pipeline:
+WARNING: [XFORM 203-713] Argument 'la[22]' has read operations in process function 'calulation'.
+WARNING: [XFORM 203-713] Reading dataflow channel 'la[23]' in the middle of dataflow may stall the dataflow pipeline:
+WARNING: [XFORM 203-713] Argument 'la[23]' has read operations in process function 'calulation'.
+WARNING: [XFORM 203-713] Reading dataflow channel 'la[24]' in the middle of dataflow may stall the dataflow pipeline:
+WARNING: [XFORM 203-713] Argument 'la[24]' has read operations in process function 'calulation'.
+WARNING: [XFORM 203-713] Reading dataflow channel 'la[25]' in the middle of dataflow may stall the dataflow pipeline:
+WARNING: [XFORM 203-713] Argument 'la[25]' has read operations in process function 'calulation'.
+WARNING: [XFORM 203-713] Reading dataflow channel 'la[26]' in the middle of dataflow may stall the dataflow pipeline:
+WARNING: [XFORM 203-713] Argument 'la[26]' has read operations in process function 'calulation'.
+WARNING: [XFORM 203-713] Reading dataflow channel 'la[27]' in the middle of dataflow may stall the dataflow pipeline:
+WARNING: [XFORM 203-713] Argument 'la[27]' has read operations in process function 'calulation'.
+WARNING: [XFORM 203-713] Reading dataflow channel 'la[28]' in the middle of dataflow may stall the dataflow pipeline:
+WARNING: [XFORM 203-713] Argument 'la[28]' has read operations in process function 'calulation'.
+WARNING: [XFORM 203-713] Reading dataflow channel 'la[29]' in the middle of dataflow may stall the dataflow pipeline:
+WARNING: [XFORM 203-713] Argument 'la[29]' has read operations in process function 'calulation'.
+WARNING: [XFORM 203-713] Reading dataflow channel 'la[30]' in the middle of dataflow may stall the dataflow pipeline:
+WARNING: [XFORM 203-713] Argument 'la[30]' has read operations in process function 'calulation'.
+WARNING: [XFORM 203-713] Reading dataflow channel 'la[31]' in the middle of dataflow may stall the dataflow pipeline:
+WARNING: [XFORM 203-713] Argument 'la[31]' has read operations in process function 'calulation'.
+WARNING: [XFORM 203-713] Reading dataflow channel 'lout[0]' in the middle of dataflow may stall the dataflow pipeline:
+WARNING: [XFORM 203-713] Argument 'lout[0]' has read and write operations in process function 'calulation'.
+WARNING: [XFORM 203-713] All the elements of global array 'lout[0]' should be updated in process function 'calulation', otherwise it may not be synthesized correctly.
+WARNING: [XFORM 203-713] Reading dataflow channel 'lout[1]' in the middle of dataflow may stall the dataflow pipeline:
+WARNING: [XFORM 203-713] Argument 'lout[1]' has read and write operations in process function 'calulation'.
+WARNING: [XFORM 203-713] All the elements of global array 'lout[1]' should be updated in process function 'calulation', otherwise it may not be synthesized correctly.
+WARNING: [XFORM 203-713] Reading dataflow channel 'lout[2]' in the middle of dataflow may stall the dataflow pipeline:
+WARNING: [XFORM 203-713] Argument 'lout[2]' has read and write operations in process function 'calulation'.
+WARNING: [XFORM 203-713] All the elements of global array 'lout[2]' should be updated in process function 'calulation', otherwise it may not be synthesized correctly.
+WARNING: [XFORM 203-713] Reading dataflow channel 'lout[3]' in the middle of dataflow may stall the dataflow pipeline:
+WARNING: [XFORM 203-713] Argument 'lout[3]' has read and write operations in process function 'calulation'.
+WARNING: [XFORM 203-713] All the elements of global array 'lout[3]' should be updated in process function 'calulation', otherwise it may not be synthesized correctly.
+WARNING: [XFORM 203-713] Reading dataflow channel 'lout[4]' in the middle of dataflow may stall the dataflow pipeline:
+WARNING: [XFORM 203-713] Argument 'lout[4]' has read and write operations in process function 'calulation'.
+WARNING: [XFORM 203-713] All the elements of global array 'lout[4]' should be updated in process function 'calulation', otherwise it may not be synthesized correctly.
+WARNING: [XFORM 203-713] Reading dataflow channel 'lout[5]' in the middle of dataflow may stall the dataflow pipeline:
+WARNING: [XFORM 203-713] Argument 'lout[5]' has read and write operations in process function 'calulation'.
+WARNING: [XFORM 203-713] All the elements of global array 'lout[5]' should be updated in process function 'calulation', otherwise it may not be synthesized correctly.
+WARNING: [XFORM 203-713] Reading dataflow channel 'lout[6]' in the middle of dataflow may stall the dataflow pipeline:
+WARNING: [XFORM 203-713] Argument 'lout[6]' has read and write operations in process function 'calulation'.
+WARNING: [XFORM 203-713] All the elements of global array 'lout[6]' should be updated in process function 'calulation', otherwise it may not be synthesized correctly.
+WARNING: [XFORM 203-713] Reading dataflow channel 'lout[7]' in the middle of dataflow may stall the dataflow pipeline:
+WARNING: [XFORM 203-713] Argument 'lout[7]' has read and write operations in process function 'calulation'.
+WARNING: [XFORM 203-713] All the elements of global array 'lout[7]' should be updated in process function 'calulation', otherwise it may not be synthesized correctly.
+WARNING: [XFORM 203-713] Reading dataflow channel 'lout[8]' in the middle of dataflow may stall the dataflow pipeline:
+WARNING: [XFORM 203-713] Argument 'lout[8]' has read and write operations in process function 'calulation'.
+WARNING: [XFORM 203-713] All the elements of global array 'lout[8]' should be updated in process function 'calulation', otherwise it may not be synthesized correctly.
+WARNING: [XFORM 203-713] Reading dataflow channel 'lout[9]' in the middle of dataflow may stall the dataflow pipeline:
+WARNING: [XFORM 203-713] Argument 'lout[9]' has read and write operations in process function 'calulation'.
+WARNING: [XFORM 203-713] All the elements of global array 'lout[9]' should be updated in process function 'calulation', otherwise it may not be synthesized correctly.
+WARNING: [XFORM 203-713] Reading dataflow channel 'lout[10]' in the middle of dataflow may stall the dataflow pipeline:
+WARNING: [XFORM 203-713] Argument 'lout[10]' has read and write operations in process function 'calulation'.
+WARNING: [XFORM 203-713] All the elements of global array 'lout[10]' should be updated in process function 'calulation', otherwise it may not be synthesized correctly.
+WARNING: [XFORM 203-713] Reading dataflow channel 'lout[11]' in the middle of dataflow may stall the dataflow pipeline:
+WARNING: [XFORM 203-713] Argument 'lout[11]' has read and write operations in process function 'calulation'.
+WARNING: [XFORM 203-713] All the elements of global array 'lout[11]' should be updated in process function 'calulation', otherwise it may not be synthesized correctly.
+WARNING: [XFORM 203-713] Reading dataflow channel 'lout[12]' in the middle of dataflow may stall the dataflow pipeline:
+WARNING: [XFORM 203-713] Argument 'lout[12]' has read and write operations in process function 'calulation'.
+WARNING: [XFORM 203-713] All the elements of global array 'lout[12]' should be updated in process function 'calulation', otherwise it may not be synthesized correctly.
+WARNING: [XFORM 203-713] Reading dataflow channel 'lout[13]' in the middle of dataflow may stall the dataflow pipeline:
+WARNING: [XFORM 203-713] Argument 'lout[13]' has read and write operations in process function 'calulation'.
+WARNING: [XFORM 203-713] All the elements of global array 'lout[13]' should be updated in process function 'calulation', otherwise it may not be synthesized correctly.
+WARNING: [XFORM 203-713] Reading dataflow channel 'lout[14]' in the middle of dataflow may stall the dataflow pipeline:
+WARNING: [XFORM 203-713] Argument 'lout[14]' has read and write operations in process function 'calulation'.
+WARNING: [XFORM 203-713] All the elements of global array 'lout[14]' should be updated in process function 'calulation', otherwise it may not be synthesized correctly.
+WARNING: [XFORM 203-713] Reading dataflow channel 'lout[15]' in the middle of dataflow may stall the dataflow pipeline:
+WARNING: [XFORM 203-713] Argument 'lout[15]' has read and write operations in process function 'calulation'.
+WARNING: [XFORM 203-713] All the elements of global array 'lout[15]' should be updated in process function 'calulation', otherwise it may not be synthesized correctly.
+WARNING: [XFORM 203-713] Reading dataflow channel 'lout[16]' in the middle of dataflow may stall the dataflow pipeline:
+WARNING: [XFORM 203-713] Argument 'lout[16]' has read and write operations in process function 'calulation'.
+WARNING: [XFORM 203-713] All the elements of global array 'lout[16]' should be updated in process function 'calulation', otherwise it may not be synthesized correctly.
+WARNING: [XFORM 203-713] Reading dataflow channel 'lout[17]' in the middle of dataflow may stall the dataflow pipeline:
+WARNING: [XFORM 203-713] Argument 'lout[17]' has read and write operations in process function 'calulation'.
+WARNING: [XFORM 203-713] All the elements of global array 'lout[17]' should be updated in process function 'calulation', otherwise it may not be synthesized correctly.
+WARNING: [XFORM 203-713] Reading dataflow channel 'lout[18]' in the middle of dataflow may stall the dataflow pipeline:
+WARNING: [XFORM 203-713] Argument 'lout[18]' has read and write operations in process function 'calulation'.
+WARNING: [XFORM 203-713] All the elements of global array 'lout[18]' should be updated in process function 'calulation', otherwise it may not be synthesized correctly.
+WARNING: [XFORM 203-713] Reading dataflow channel 'lout[19]' in the middle of dataflow may stall the dataflow pipeline:
+WARNING: [XFORM 203-713] Argument 'lout[19]' has read and write operations in process function 'calulation'.
+WARNING: [XFORM 203-713] All the elements of global array 'lout[19]' should be updated in process function 'calulation', otherwise it may not be synthesized correctly.
+WARNING: [XFORM 203-713] Reading dataflow channel 'lout[20]' in the middle of dataflow may stall the dataflow pipeline:
+WARNING: [XFORM 203-713] Argument 'lout[20]' has read and write operations in process function 'calulation'.
+WARNING: [XFORM 203-713] All the elements of global array 'lout[20]' should be updated in process function 'calulation', otherwise it may not be synthesized correctly.
+WARNING: [XFORM 203-713] Reading dataflow channel 'lout[21]' in the middle of dataflow may stall the dataflow pipeline:
+WARNING: [XFORM 203-713] Argument 'lout[21]' has read and write operations in process function 'calulation'.
+WARNING: [XFORM 203-713] All the elements of global array 'lout[21]' should be updated in process function 'calulation', otherwise it may not be synthesized correctly.
+WARNING: [XFORM 203-713] Reading dataflow channel 'lout[22]' in the middle of dataflow may stall the dataflow pipeline:
+WARNING: [XFORM 203-713] Argument 'lout[22]' has read and write operations in process function 'calulation'.
+WARNING: [XFORM 203-713] All the elements of global array 'lout[22]' should be updated in process function 'calulation', otherwise it may not be synthesized correctly.
+WARNING: [XFORM 203-713] Reading dataflow channel 'lout[23]' in the middle of dataflow may stall the dataflow pipeline:
+WARNING: [XFORM 203-713] Argument 'lout[23]' has read and write operations in process function 'calulation'.
+WARNING: [XFORM 203-713] All the elements of global array 'lout[23]' should be updated in process function 'calulation', otherwise it may not be synthesized correctly.
+WARNING: [XFORM 203-713] Reading dataflow channel 'lout[24]' in the middle of dataflow may stall the dataflow pipeline:
+WARNING: [XFORM 203-713] Argument 'lout[24]' has read and write operations in process function 'calulation'.
+WARNING: [XFORM 203-713] All the elements of global array 'lout[24]' should be updated in process function 'calulation', otherwise it may not be synthesized correctly.
+WARNING: [XFORM 203-713] Reading dataflow channel 'lout[25]' in the middle of dataflow may stall the dataflow pipeline:
+WARNING: [XFORM 203-713] Argument 'lout[25]' has read and write operations in process function 'calulation'.
+WARNING: [XFORM 203-713] All the elements of global array 'lout[25]' should be updated in process function 'calulation', otherwise it may not be synthesized correctly.
+WARNING: [XFORM 203-713] Reading dataflow channel 'lout[26]' in the middle of dataflow may stall the dataflow pipeline:
+WARNING: [XFORM 203-713] Argument 'lout[26]' has read and write operations in process function 'calulation'.
+WARNING: [XFORM 203-713] All the elements of global array 'lout[26]' should be updated in process function 'calulation', otherwise it may not be synthesized correctly.
+WARNING: [XFORM 203-713] Reading dataflow channel 'lout[27]' in the middle of dataflow may stall the dataflow pipeline:
+WARNING: [XFORM 203-713] Argument 'lout[27]' has read and write operations in process function 'calulation'.
+WARNING: [XFORM 203-713] All the elements of global array 'lout[27]' should be updated in process function 'calulation', otherwise it may not be synthesized correctly.
+WARNING: [XFORM 203-713] Reading dataflow channel 'lout[28]' in the middle of dataflow may stall the dataflow pipeline:
+WARNING: [XFORM 203-713] Argument 'lout[28]' has read and write operations in process function 'calulation'.
+WARNING: [XFORM 203-713] All the elements of global array 'lout[28]' should be updated in process function 'calulation', otherwise it may not be synthesized correctly.
+WARNING: [XFORM 203-713] Reading dataflow channel 'lout[29]' in the middle of dataflow may stall the dataflow pipeline:
+WARNING: [XFORM 203-713] Argument 'lout[29]' has read and write operations in process function 'calulation'.
+WARNING: [XFORM 203-713] All the elements of global array 'lout[29]' should be updated in process function 'calulation', otherwise it may not be synthesized correctly.
+WARNING: [XFORM 203-713] Reading dataflow channel 'lout[30]' in the middle of dataflow may stall the dataflow pipeline:
+WARNING: [XFORM 203-713] Argument 'lout[30]' has read and write operations in process function 'calulation'.
+WARNING: [XFORM 203-713] All the elements of global array 'lout[30]' should be updated in process function 'calulation', otherwise it may not be synthesized correctly.
+WARNING: [XFORM 203-713] Reading dataflow channel 'lout[31]' in the middle of dataflow may stall the dataflow pipeline:
+WARNING: [XFORM 203-713] Argument 'lout[31]' has read and write operations in process function 'calulation'.
+WARNING: [XFORM 203-713] All the elements of global array 'lout[31]' should be updated in process function 'calulation', otherwise it may not be synthesized correctly.
+INFO: [XFORM 203-712] Applying dataflow to function 'cal_initial', detected/extracted 2 process function(s): 
+	 'out_initial'
+	 'read_A'.
+INFO: [XFORM 203-712] Applying dataflow to function 'calulation', detected/extracted 1 process function(s): 
+	 'calulation_Loop_1_proc19'.
+INFO: [XFORM 203-712] Applying dataflow to function 'stream_cal', detected/extracted 2 process function(s): 
+	 'stream_cal_Loop_1_proc20'
+	 'calulation'.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 505.449 ; gain = 140.590 ; free physical = 26217 ; free virtual = 62721
+INFO: [XFORM 203-541] Flattening a loop nest 'Loop-1' (/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:26:6) in function 'write_out'.
+INFO: [XFORM 203-541] Flattening a loop nest 'Loop-1' (/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:6:9) in function 'read_A'.
+INFO: [XFORM 203-541] Flattening a loop nest 'Loop-1' (/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:54:9) in function 'calulation_Loop_1_proc19'.
+WARNING: [XFORM 203-631] Renaming function 'stream_cal_Loop_1_proc20' to 'stream_cal_Loop_1_pr' (/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:69)
+WARNING: [XFORM 203-631] Renaming function 'calulation_Loop_1_proc19' to 'calulation_Loop_1_pr' (/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:54:33)
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'lout[1]'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'lout[2]'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'lout[3]'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'lout[4]'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'lout[5]'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'lout[6]'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'lout[7]'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'lout[8]'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'lout[9]'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'lout[10]'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'lout[11]'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'lout[12]'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'lout[13]'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'lout[14]'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'lout[15]'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'lout[16]'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'lout[17]'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'lout[18]'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'lout[19]'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'lout[20]'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'lout[21]'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'lout[22]'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'lout[23]'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'lout[24]'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'lout[25]'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'lout[26]'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'lout[27]'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'lout[28]'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'lout[29]'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'lout[30]'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'lout[31]'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'lout[0]'.
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 569.449 ; gain = 204.590 ; free physical = 26153 ; free virtual = 62658
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'cal_gemm' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'out_initial' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'Loop 1'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 1.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 6.37 seconds; current allocated memory: 145.402 MB.
+WARNING: [HLS 200-433] Loop - Loop 1 has an initiation interval that is equal to the pipeline depth (1) - this results in an unpipelined loop.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.05 seconds; current allocated memory: 145.727 MB.
+WARNING: [HLS 200-433] Loop - Loop 1 has an initiation interval that is equal to the pipeline depth (1) - this results in an unpipelined loop.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'read_A' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'Loop 1'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 2.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.11 seconds; current allocated memory: 146.487 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.05 seconds; current allocated memory: 146.886 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'cal_initial' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.05 seconds; current allocated memory: 146.980 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.07 seconds; current allocated memory: 147.161 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'stream_cal_Loop_1_pr' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'Loop 1'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 2.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.05 seconds; current allocated memory: 147.250 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.02 seconds; current allocated memory: 147.334 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'calulation_Loop_1_pr' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'Loop 1'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 12.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.34 seconds; current allocated memory: 148.428 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.33 seconds; current allocated memory: 150.296 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'calulation' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.39 seconds; current allocated memory: 150.385 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.12 seconds; current allocated memory: 150.571 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'stream_cal' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.2 seconds; current allocated memory: 150.674 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.18 seconds; current allocated memory: 150.889 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'write_out' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'Loop 1'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 3.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.26 seconds; current allocated memory: 151.263 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.08 seconds; current allocated memory: 151.782 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'cal_gemm' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+WARNING: [SCHED 204-71] Latency directive discarded for region cal_gemm since region contains function calls with variable latency.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.09 seconds; current allocated memory: 152.002 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.41 seconds; current allocated memory: 152.377 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'out_initial' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'out_initial'.
+INFO: [HLS 200-111]  Elapsed time: 0.28 seconds; current allocated memory: 152.861 MB.
+WARNING: [HLS 200-433] Loop - Loop 1 has an initiation interval that is equal to the pipeline depth (1) - this results in an unpipelined loop.
+WARNING: [HLS 200-433] Loop - Loop 1 has an initiation interval that is equal to the pipeline depth (1) - this results in an unpipelined loop.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'read_A' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'read_A'.
+INFO: [HLS 200-111]  Elapsed time: 0.08 seconds; current allocated memory: 154.840 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'cal_initial' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'cal_initial'.
+INFO: [HLS 200-111]  Elapsed time: 0.1 seconds; current allocated memory: 158.636 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'stream_cal_Loop_1_pr' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'stream_cal_Loop_1_pr'.
+INFO: [HLS 200-111]  Elapsed time: 0.06 seconds; current allocated memory: 159.677 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'calulation_Loop_1_pr' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SYN 201-210] Renamed object name 'cal_gemm_fadd_32ns_32ns_32_5_full_dsp_1' to 'cal_gemm_fadd_32nbkb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'cal_gemm_fmul_32ns_32ns_32_4_max_dsp_1' to 'cal_gemm_fmul_32ncud' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'cal_gemm_fadd_32nbkb': 32 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'cal_gemm_fmul_32ncud': 32 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'calulation_Loop_1_pr'.
+INFO: [HLS 200-111]  Elapsed time: 0.12 seconds; current allocated memory: 163.273 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'calulation' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'calulation'.
+INFO: [HLS 200-111]  Elapsed time: 0.84 seconds; current allocated memory: 170.074 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'stream_cal' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'stream_cal'.
+INFO: [HLS 200-111]  Elapsed time: 0.27 seconds; current allocated memory: 173.758 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'write_out' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SYN 201-210] Renamed object name 'cal_gemm_mux_325_32_1_1' to 'cal_gemm_mux_325_dEe' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'cal_gemm_mux_325_dEe': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'write_out'.
+INFO: [HLS 200-111]  Elapsed time: 0.27 seconds; current allocated memory: 175.466 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'cal_gemm' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'cal_gemm/A' to 'ap_fifo'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'cal_gemm/B' to 'ap_fifo'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'cal_gemm/C' to 'ap_fifo'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'cal_gemm' to 'ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'cal_gemm'.
+INFO: [HLS 200-111]  Elapsed time: 0.4 seconds; current allocated memory: 182.509 MB.
+INFO: [RTMG 210-285] Implementing FIFO 'inStream1_V_U(a0_fifo_w32_d128_A)' using Block RAMs.
+INFO: [RTMG 210-278] Implementing memory 'a0_cal_gemm_la_0_ram (RAM)' using block RAMs.
+INFO: [RTMG 210-278] Implementing memory 'a0_cal_gemm_lout_0_ram (RAM)' using block RAMs.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 569.453 ; gain = 204.594 ; free physical = 26082 ; free virtual = 62607
+INFO: [SYSC 207-301] Generating SystemC RTL for cal_gemm with prefix a0_.
+INFO: [VHDL 208-304] Generating VHDL RTL for cal_gemm with prefix a0_.
+INFO: [VLOG 209-307] Generating Verilog RTL for cal_gemm with prefix a0_.
+INFO: [IMPL 213-8] Exporting RTL as a Vivado IP.
+
+****** Vivado v2018.2 (64-bit)
+  **** SW Build 2258646 on Thu Jun 14 20:02:38 MDT 2018
+  **** IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+source run_ippack.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2018.2/data/ip'.
+WARNING: [IP_Flow 19-4832] The IP name 'a0_cal_gemm_ap_fadd_3_full_dsp_32' you have specified is long. The Windows operating system has path length limitations. It is recommended you use shorter names to reduce the likelihood of issues.
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'a0_cal_gemm_ap_fadd_3_full_dsp_32'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'a0_cal_gemm_ap_fadd_3_full_dsp_32'...
+WARNING: [IP_Flow 19-4832] The IP name 'a0_cal_gemm_ap_fmul_2_max_dsp_32' you have specified is long. The Windows operating system has path length limitations. It is recommended you use shorter names to reduce the likelihood of issues.
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'a0_cal_gemm_ap_fmul_2_max_dsp_32'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'a0_cal_gemm_ap_fmul_2_max_dsp_32'...
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2018.2/data/ip'.
+INFO: [Common 17-206] Exiting Vivado at Fri Mar  8 14:10:31 2019...
+INFO: [HLS 200-112] Total elapsed time: 23.43 seconds; peak allocated memory: 182.509 MB.
+INFO: [Common 17-206] Exiting vivado_hls at Fri Mar  8 14:10:31 2019...
+/bin/sed -i -e {s/xilinx\.com\/xidane/xilinx\.com\/xd/g} /home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/build/zed_linux_hw/_sds/vhls/cal_gemm/solution/impl/ip/auxiliary.xml
+/opt/Xilinx/SDx/2018.2/bin/xsltproc  --output /home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/build/zed_linux_hw/_sds/.llvm/cal_gemm.hlsmap1.xml  --stringparam P_CLKID 2  --stringparam P_HLS_TYPE hls   /opt/Xilinx/SDx/2018.2/scripts/xsd/xdHlsmapRenameAttr.xsl  /home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/build/zed_linux_hw/_sds/.llvm/cal_gemm_auxiliary.xml
+/opt/Xilinx/SDx/2018.2/bin/xsltproc  --output /home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/build/zed_linux_hw/_sds/.llvm/cal_gemm.hlsmap.xml  /opt/Xilinx/SDx/2018.2/scripts/xsd/xdHlsmapAdapter.xsl  /home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/build/zed_linux_hw/_sds/.llvm/cal_gemm.hlsmap1.xml
+/opt/Xilinx/SDx/2018.2/bin/xsltproc    --output /home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/build/zed_linux_hw/_sds/.llvm/cal_gemm.fcnmap.xml  /opt/Xilinx/SDx/2018.2/scripts/xsd/xdHlsmapAxi4.xsl  /home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/build/zed_linux_hw/_sds/.llvm/cal_gemm.hlsmap.xml
+/opt/Xilinx/SDx/2018.2/bin/xsltproc  --output /home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/build/zed_linux_hw/_sds/.llvm/cal_gemm_if.xml  --stringparam P_ADAPTER_COMPREF adapter_v3_0  /opt/Xilinx/SDx/2018.2/scripts/xsd/xdHlsAdapterComp.xsl  /home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/build/zed_linux_hw/_sds/.llvm/cal_gemm.fcnmap.xml
+arm-linux-gnueabihf-objcopy --add-section .xddata=/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/build/zed_linux_hw/_sds/swstubs/cal_gemm.xml /home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/build/zed_linux_hw/_sds/swstubs/kernel.o
+arm-linux-gnueabihf-objcopy --add-section .xdasm=/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/build/zed_linux_hw/src/kernel.s /home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/build/zed_linux_hw/_sds/swstubs/kernel.o
+arm-linux-gnueabihf-g++ -E -I/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/libs/sds_utils/ -Wall -O3 -Wno-unused-label -Wall -Wno-unused-result -Wno-unknown-pragmas -Wfatal-errors -fPIC -DSDSOC -D __SDSCC__      -I /opt/Xilinx/SDx/2018.2/target/aarch32-linux/include  -D HLS_NO_XIL_FPO_LIB  -I /opt/Xilinx/Vivado/2018.2/include /home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp -o /home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/build/zed_linux_hw/_sds/.pp/kernel.iix
+arm-linux-gnueabihf-objcopy --add-section .xdpp=/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/build/zed_linux_hw/_sds/.pp/kernel.ii /home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/build/zed_linux_hw/_sds/swstubs/kernel.o
+arm-linux-gnueabihf-objcopy --add-section .xdfcnmap=/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/build/zed_linux_hw/_sds/.llvm/cal_gemm.fcnmap.xml /home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/build/zed_linux_hw/_sds/swstubs/kernel.o
+arm-linux-gnueabihf-objcopy --add-section .xdhlscore=/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/build/zed_linux_hw/_sds/vhls/cal_gemm/solution/impl/ip/xilinx_com_hls_cal_gemm_1_0.zip /home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/build/zed_linux_hw/_sds/swstubs/kernel.o
+arm-linux-gnueabihf-objcopy --add-section .xdif=/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/build/zed_linux_hw/_sds/.llvm/cal_gemm_if.xml /home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/build/zed_linux_hw/_sds/swstubs/kernel.o
+sds++ log file saved as /home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/build/zed_linux_hw/_sds/reports/sds_kernel.log
+sds++ completed at Fri Mar 08 14:10:31 KST 2019

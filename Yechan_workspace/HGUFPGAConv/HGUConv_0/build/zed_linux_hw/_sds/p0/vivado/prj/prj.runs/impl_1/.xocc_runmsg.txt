@@ -1,0 +1,2 @@
+Compiling (bitstream) accelerator binary: bin
+Log file: /home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/build/zed_linux_hw/_sds/p0/vivado/prj/prj.runs/impl_1/runme.log

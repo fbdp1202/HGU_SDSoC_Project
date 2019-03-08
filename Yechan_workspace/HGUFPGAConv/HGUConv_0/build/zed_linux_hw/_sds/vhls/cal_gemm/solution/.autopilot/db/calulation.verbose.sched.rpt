@@ -1,0 +1,117 @@
+
+
+================================================================
+== Vivado HLS Report for 'calulation'
+================================================================
+* Date:           Fri Mar  8 14:10:15 2019
+
+* Version:        2018.2 (Build 2258646 on Thu Jun 14 20:25:20 MDT 2018)
+* Project:        cal_gemm
+* Solution:       solution
+* Product family: zynq
+* Target device:  xc7z020clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|     7.256|        2.70|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-------+-------+-------+-------+----------+
+    |    Latency    |    Interval   | Pipeline |
+    |  min  |  max  |  min  |  max  |   Type   |
+    +-------+-------+-------+-------+----------+
+    |  24348|  24348|  24349|  24349| dataflow |
+    +-------+-------+-------+-------+----------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 2
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 2
+* Pipeline : 0
+* Dataflow Pipeline: 1
+  DF-Pipeline-0: Size = 2, States = { 1 2 }
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 0.00>
+ST_1 : Operation 3 [2/2] (0.00ns)   --->   "call fastcc void @calulation_Loop_1_pr([169 x float]* %lout_0, [169 x float]* %lout_1, [169 x float]* %lout_2, [169 x float]* %lout_3, [169 x float]* %lout_4, [169 x float]* %lout_5, [169 x float]* %lout_6, [169 x float]* %lout_7, [169 x float]* %lout_8, [169 x float]* %lout_9, [169 x float]* %lout_10, [169 x float]* %lout_11, [169 x float]* %lout_12, [169 x float]* %lout_13, [169 x float]* %lout_14, [169 x float]* %lout_15, [169 x float]* %lout_16, [169 x float]* %lout_17, [169 x float]* %lout_18, [169 x float]* %lout_19, [169 x float]* %lout_20, [169 x float]* %lout_21, [169 x float]* %lout_22, [169 x float]* %lout_23, [169 x float]* %lout_24, [169 x float]* %lout_25, [169 x float]* %lout_26, [169 x float]* %lout_27, [169 x float]* %lout_28, [169 x float]* %lout_29, [169 x float]* %lout_30, [169 x float]* %lout_31, float* %inStream1_V, [144 x float]* %la_0, [144 x float]* %la_1, [144 x float]* %la_2, [144 x float]* %la_3, [144 x float]* %la_4, [144 x float]* %la_5, [144 x float]* %la_6, [144 x float]* %la_7, [144 x float]* %la_8, [144 x float]* %la_9, [144 x float]* %la_10, [144 x float]* %la_11, [144 x float]* %la_12, [144 x float]* %la_13, [144 x float]* %la_14, [144 x float]* %la_15, [144 x float]* %la_16, [144 x float]* %la_17, [144 x float]* %la_18, [144 x float]* %la_19, [144 x float]* %la_20, [144 x float]* %la_21, [144 x float]* %la_22, [144 x float]* %la_23, [144 x float]* %la_24, [144 x float]* %la_25, [144 x float]* %la_26, [144 x float]* %la_27, [144 x float]* %la_28, [144 x float]* %la_29, [144 x float]* %la_30, [144 x float]* %la_31)"   --->   Operation 3 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 2 <SV = 1> <Delay = 0.00>
+ST_2 : Operation 4 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(float* %inStream1_V, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str22, i32 0, i32 0, [1 x i8]* @p_str23, [1 x i8]* @p_str24, [1 x i8]* @p_str25, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str26, [1 x i8]* @p_str27)"   --->   Operation 4 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 5 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecDataflowPipeline(i32 -1, [1 x i8]* @p_str1) nounwind" [/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:52]   --->   Operation 5 'specdataflowpipeline' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 6 [1/2] (0.00ns)   --->   "call fastcc void @calulation_Loop_1_pr([169 x float]* %lout_0, [169 x float]* %lout_1, [169 x float]* %lout_2, [169 x float]* %lout_3, [169 x float]* %lout_4, [169 x float]* %lout_5, [169 x float]* %lout_6, [169 x float]* %lout_7, [169 x float]* %lout_8, [169 x float]* %lout_9, [169 x float]* %lout_10, [169 x float]* %lout_11, [169 x float]* %lout_12, [169 x float]* %lout_13, [169 x float]* %lout_14, [169 x float]* %lout_15, [169 x float]* %lout_16, [169 x float]* %lout_17, [169 x float]* %lout_18, [169 x float]* %lout_19, [169 x float]* %lout_20, [169 x float]* %lout_21, [169 x float]* %lout_22, [169 x float]* %lout_23, [169 x float]* %lout_24, [169 x float]* %lout_25, [169 x float]* %lout_26, [169 x float]* %lout_27, [169 x float]* %lout_28, [169 x float]* %lout_29, [169 x float]* %lout_30, [169 x float]* %lout_31, float* %inStream1_V, [144 x float]* %la_0, [144 x float]* %la_1, [144 x float]* %la_2, [144 x float]* %la_3, [144 x float]* %la_4, [144 x float]* %la_5, [144 x float]* %la_6, [144 x float]* %la_7, [144 x float]* %la_8, [144 x float]* %la_9, [144 x float]* %la_10, [144 x float]* %la_11, [144 x float]* %la_12, [144 x float]* %la_13, [144 x float]* %la_14, [144 x float]* %la_15, [144 x float]* %la_16, [144 x float]* %la_17, [144 x float]* %la_18, [144 x float]* %la_19, [144 x float]* %la_20, [144 x float]* %la_21, [144 x float]* %la_22, [144 x float]* %la_23, [144 x float]* %la_24, [144 x float]* %la_25, [144 x float]* %la_26, [144 x float]* %la_27, [144 x float]* %la_28, [144 x float]* %la_29, [144 x float]* %la_30, [144 x float]* %la_31)"   --->   Operation 6 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_2 : Operation 7 [1/1] (0.00ns)   --->   "ret void" [/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:64]   --->   Operation 7 'ret' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 2.7ns.
+
+ <State 1>: 0ns
+The critical path consists of the following:
+
+ <State 2>: 0ns
+The critical path consists of the following:
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

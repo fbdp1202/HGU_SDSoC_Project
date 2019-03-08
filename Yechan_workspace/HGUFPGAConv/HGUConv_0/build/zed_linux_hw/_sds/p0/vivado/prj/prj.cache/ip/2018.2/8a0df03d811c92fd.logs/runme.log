@@ -1,0 +1,286 @@
+
+*** Running vivado
+    with args -log zed_s00_data_fifo_0.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source zed_s00_data_fifo_0.tcl
+
+
+****** Vivado v2018.2 (64-bit)
+  **** SW Build 2258646 on Thu Jun 14 20:02:38 MDT 2018
+  **** IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+source zed_s00_data_fifo_0.tcl -notrace
+Command: synth_design -top zed_s00_data_fifo_0 -part xc7z020clg484-1 -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 7073 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:14 . Memory (MB): peak = 1379.223 ; gain = 12.000 ; free physical = 23519 ; free virtual = 60217
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'zed_s00_data_fifo_0' [/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/build/zed_linux_hw/_sds/p0/vivado/prj/prj.srcs/sources_1/bd/zed/ip/zed_s00_data_fifo_0/synth/zed_s00_data_fifo_0.v:58]
+INFO: [Synth 8-6157] synthesizing module 'axi_data_fifo_v2_1_16_axi_data_fifo' [/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/build/zed_linux_hw/_sds/p0/vivado/prj/prj.srcs/sources_1/bd/zed/ipshared/247d/hdl/axi_data_fifo_v2_1_vl_rfs.v:1283]
+	Parameter C_FAMILY bound to: zynq - type: string 
+	Parameter C_AXI_PROTOCOL bound to: 2 - type: integer 
+	Parameter C_AXI_ID_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter C_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_AXI_SUPPORTS_USER_SIGNALS bound to: 0 - type: integer 
+	Parameter C_AXI_AWUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_ARUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_WUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_RUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_BUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_WRITE_FIFO_DEPTH bound to: 512 - type: integer 
+	Parameter C_AXI_WRITE_FIFO_TYPE bound to: bram - type: string 
+	Parameter C_AXI_WRITE_FIFO_DELAY bound to: 1 - type: integer 
+	Parameter C_AXI_READ_FIFO_DEPTH bound to: 512 - type: integer 
+	Parameter C_AXI_READ_FIFO_TYPE bound to: bram - type: string 
+	Parameter C_AXI_READ_FIFO_DELAY bound to: 1 - type: integer 
+	Parameter P_WIDTH_RACH bound to: 63 - type: integer 
+	Parameter P_WIDTH_WACH bound to: 63 - type: integer 
+	Parameter P_WIDTH_RDCH bound to: 37 - type: integer 
+	Parameter P_WIDTH_WDCH bound to: 38 - type: integer 
+	Parameter P_WIDTH_WRCH bound to: 4 - type: integer 
+	Parameter P_PRIM_FIFO_TYPE bound to: 512x72 - type: string 
+	Parameter P_AXI4 bound to: 0 - type: integer 
+	Parameter P_AXI3 bound to: 1 - type: integer 
+	Parameter P_AXILITE bound to: 2 - type: integer 
+	Parameter P_WRITE_FIFO_DEPTH_LOG bound to: 9 - type: integer 
+	Parameter P_READ_FIFO_DEPTH_LOG bound to: 9 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'axi_data_fifo_v2_1_16_axi_data_fifo' (1#1) [/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/build/zed_linux_hw/_sds/p0/vivado/prj/prj.srcs/sources_1/bd/zed/ipshared/247d/hdl/axi_data_fifo_v2_1_vl_rfs.v:1283]
+INFO: [Synth 8-6155] done synthesizing module 'zed_s00_data_fifo_0' (2#1) [/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/build/zed_linux_hw/_sds/p0/vivado/prj/prj.srcs/sources_1/bd/zed/ip/zed_s00_data_fifo_0/synth/zed_s00_data_fifo_0.v:58]
+WARNING: [Synth 8-3331] design axi_data_fifo_v2_1_16_axi_data_fifo has unconnected port aclk
+WARNING: [Synth 8-3331] design axi_data_fifo_v2_1_16_axi_data_fifo has unconnected port aresetn
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:11 ; elapsed = 00:00:29 . Memory (MB): peak = 1508.852 ; gain = 141.629 ; free physical = 23254 ; free virtual = 59955
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:11 ; elapsed = 00:00:30 . Memory (MB): peak = 1508.852 ; gain = 141.629 ; free physical = 23243 ; free virtual = 59944
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:30 . Memory (MB): peak = 1508.852 ; gain = 141.629 ; free physical = 23244 ; free virtual = 59944
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7z020clg484-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/build/zed_linux_hw/_sds/p0/vivado/prj/prj.srcs/sources_1/bd/zed/ip/zed_s00_data_fifo_0/zed_s00_data_fifo_0_ooc.xdc] for cell 'inst'
+Finished Parsing XDC File [/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/build/zed_linux_hw/_sds/p0/vivado/prj/prj.srcs/sources_1/bd/zed/ip/zed_s00_data_fifo_0/zed_s00_data_fifo_0_ooc.xdc] for cell 'inst'
+Parsing XDC File [/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/build/zed_linux_hw/_sds/p0/vivado/prj/prj.runs/zed_s00_data_fifo_0_synth_1/dont_touch.xdc]
+Finished Parsing XDC File [/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/build/zed_linux_hw/_sds/p0/vivado/prj/prj.runs/zed_s00_data_fifo_0_synth_1/dont_touch.xdc]
+Completed Processing XDC Constraints
+
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.03 . Memory (MB): peak = 1654.133 ; gain = 0.004 ; free physical = 23459 ; free virtual = 60165
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:20 ; elapsed = 00:00:57 . Memory (MB): peak = 1654.133 ; gain = 286.910 ; free physical = 23350 ; free virtual = 60057
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z020clg484-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:20 ; elapsed = 00:00:57 . Memory (MB): peak = 1654.133 ; gain = 286.910 ; free physical = 23350 ; free virtual = 60056
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property DONT_TOUCH = true for inst. (constraint file  /home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/build/zed_linux_hw/_sds/p0/vivado/prj/prj.runs/zed_s00_data_fifo_0_synth_1/dont_touch.xdc, line 9).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:20 ; elapsed = 00:00:57 . Memory (MB): peak = 1654.133 ; gain = 286.910 ; free physical = 23352 ; free virtual = 60058
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:20 ; elapsed = 00:00:57 . Memory (MB): peak = 1654.137 ; gain = 286.914 ; free physical = 23349 ; free virtual = 60056
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 220 (col length:60)
+BRAMs: 280 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+WARNING: [Synth 8-3331] design axi_data_fifo_v2_1_16_axi_data_fifo has unconnected port aclk
+WARNING: [Synth 8-3331] design axi_data_fifo_v2_1_16_axi_data_fifo has unconnected port aresetn
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:21 ; elapsed = 00:00:57 . Memory (MB): peak = 1654.137 ; gain = 286.914 ; free physical = 23415 ; free virtual = 60123
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:27 ; elapsed = 00:01:07 . Memory (MB): peak = 1689.133 ; gain = 321.910 ; free physical = 22965 ; free virtual = 59677
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:27 ; elapsed = 00:01:07 . Memory (MB): peak = 1689.133 ; gain = 321.910 ; free physical = 22965 ; free virtual = 59677
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:27 ; elapsed = 00:01:07 . Memory (MB): peak = 1689.133 ; gain = 321.910 ; free physical = 22965 ; free virtual = 59677
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:28 ; elapsed = 00:01:08 . Memory (MB): peak = 1689.133 ; gain = 321.910 ; free physical = 22960 ; free virtual = 59672
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:28 ; elapsed = 00:01:08 . Memory (MB): peak = 1689.133 ; gain = 321.910 ; free physical = 22960 ; free virtual = 59672
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:28 ; elapsed = 00:01:08 . Memory (MB): peak = 1689.133 ; gain = 321.910 ; free physical = 22959 ; free virtual = 59671
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:28 ; elapsed = 00:01:08 . Memory (MB): peak = 1689.133 ; gain = 321.910 ; free physical = 22959 ; free virtual = 59671
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:28 ; elapsed = 00:01:08 . Memory (MB): peak = 1689.133 ; gain = 321.910 ; free physical = 22959 ; free virtual = 59671
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:28 ; elapsed = 00:01:08 . Memory (MB): peak = 1689.133 ; gain = 321.910 ; free physical = 22959 ; free virtual = 59671
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++-+-----+------+
+| |Cell |Count |
++-+-----+------+
++-+-----+------+
+
+Report Instance Areas: 
++------+---------+------------------------------------+------+
+|      |Instance |Module                              |Cells |
++------+---------+------------------------------------+------+
+|1     |top      |                                    |     0|
+|2     |  inst   |axi_data_fifo_v2_1_16_axi_data_fifo |     0|
++------+---------+------------------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:28 ; elapsed = 00:01:08 . Memory (MB): peak = 1689.133 ; gain = 321.910 ; free physical = 22959 ; free virtual = 59671
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 2 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:20 ; elapsed = 00:00:43 . Memory (MB): peak = 1689.133 ; gain = 176.629 ; free physical = 23015 ; free virtual = 59727
+Synthesis Optimization Complete : Time (s): cpu = 00:00:28 ; elapsed = 00:01:08 . Memory (MB): peak = 1689.137 ; gain = 321.910 ; free physical = 23015 ; free virtual = 59727
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+13 Infos, 4 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:30 ; elapsed = 00:01:09 . Memory (MB): peak = 1708.133 ; gain = 353.492 ; free physical = 22994 ; free virtual = 59706
+INFO: [Common 17-600] The following parameters have non-default value.
+general.maxThreads
+WARNING: [Constraints 18-5210] No constraint will be written out.
+INFO: [Common 17-1381] The checkpoint '/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/build/zed_linux_hw/_sds/p0/vivado/prj/prj.runs/zed_s00_data_fifo_0_synth_1/zed_s00_data_fifo_0.dcp' has been generated.

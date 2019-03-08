@@ -1,0 +1,14 @@
+{
+	"file":	"/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/gemm.c",
+	"callers":	[{
+			"call":	"cal_gemm",
+			"line":	42,
+			"col":	2,
+			"repl":	"_p0_cal_gemm_1_noasync"
+		}],
+	"parents":	[{
+			"function":	"gemm_fpga",
+			"proto":	"#ifdef __cplusplus\nextern \"C\" {\n#endif\nvoid _p0_cal_gemm_1_noasync(float * A, float * B, float * C);\n#ifdef __cplusplus\n}\n#endif\n"
+		}],
+	"waits":	[]
+}

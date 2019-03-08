@@ -1,0 +1,43 @@
+{
+    "example": "Array Partitioning",
+    "overview": [
+        "This example shows how to use array partitioning to improve performance of a hardware function"
+    ],
+    "key_concepts": [ "Hardware Function Optimization", "Array Partitioning"],
+    "keywords": ["#pragma HLS ARRAY_PARTITION", "complete"],
+    "contributors" : [
+        {
+            "group": "Xilinx",
+            "url" : "http://www.xilinx.com"
+        }
+    ],
+    "revision" : [
+        {
+            "date" : "MAY2019",
+            "version": "1.0",
+            "description": "Initial Xilinx Release"
+        }
+    ],
+    "compiler" : {
+        "options" : "-Wno-unused-label -Wall -Wno-unused-result -Wno-unknown-pragmas -Wfatal-errors -fPIC"
+    },
+    "accelerators": [
+       {
+           "name" : "cal_gemm",
+           "location" : "kernel.cpp"
+       }
+    ],
+    "libs": [
+            "sds_utils"
+    ],
+    "os" : [
+            "linux",
+            "standalone"
+    ],
+    "runtime" : [
+                 "C/C++"
+    ],
+    "source_dir" : "src/*.c",
+    "pass_string" : "TEST PASSED",
+    "fail_string" : "TEST FAILED" 
+}

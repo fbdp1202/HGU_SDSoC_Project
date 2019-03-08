@@ -1,0 +1,281 @@
+
+
+================================================================
+== Vivado HLS Report for 'write_out'
+================================================================
+* Date:           Fri Mar  8 14:10:16 2019
+
+* Version:        2018.2 (Build 2258646 on Thu Jun 14 20:25:20 MDT 2018)
+* Project:        cal_gemm
+* Solution:       solution
+* Product family: zynq
+* Target device:  xc7z020clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|     6.602|        2.70|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +------+------+------+------+---------+
+    |   Latency   |   Interval  | Pipeline|
+    |  min |  max |  min |  max |   Type  |
+    +------+------+------+------+---------+
+    |  5411|  5411|  5411|  5411|   none  |
+    +------+------+------+------+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +----------+------+------+----------+-----------+-----------+------+----------+
+        |          |   Latency   | Iteration|  Initiation Interval  | Trip |          |
+        | Loop Name|  min |  max |  Latency |  achieved |   target  | Count| Pipelined|
+        +----------+------+------+----------+-----------+-----------+------+----------+
+        |- Loop 1  |  5409|  5409|         3|          1|          1|  5408|    yes   |
+        +----------+------+------+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 1, depth = 3
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 5
+* Pipeline : 1
+  Pipeline-0 : II = 1, D = 3, States = { 2 3 4 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	5  / (exitcond_flatten)
+	3  / (!exitcond_flatten)
+3 --> 
+	4  / true
+4 --> 
+	2  / true
+5 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.76>
+ST_1 : Operation 6 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(float* %C, [8 x i8]* @p_str6, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind"   --->   Operation 6 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 7 [1/1] (1.76ns)   --->   "br label %1" [/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:26]   --->   Operation 7 'br' <Predicate = true> <Delay = 1.76>
+
+State 2 <SV = 1> <Delay = 6.60>
+ST_2 : Operation 8 [1/1] (0.00ns)   --->   "%indvar_flatten = phi i13 [ 0, %0 ], [ %indvar_flatten_next, %.reset ]"   --->   Operation 8 'phi' 'indvar_flatten' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 9 [1/1] (0.00ns)   --->   "%indvars_iv = phi i13 [ 169, %0 ], [ %indvars_iv_mid2, %.reset ]" [/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:27]   --->   Operation 9 'phi' 'indvars_iv' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 10 [1/1] (0.00ns)   --->   "%w = phi i6 [ 0, %0 ], [ %w_t_mid2_v, %.reset ]" [/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:27]   --->   Operation 10 'phi' 'w' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 11 [1/1] (0.00ns)   --->   "%z = phi i13 [ 0, %0 ], [ %z_mid2, %.reset ]" [/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:27]   --->   Operation 11 'phi' 'z' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 12 [1/1] (0.00ns)   --->   "%z_1 = phi i13 [ 0, %0 ], [ %tmp, %.reset ]" [/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:27]   --->   Operation 12 'phi' 'z_1' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 13 [1/1] (0.00ns)   --->   "%i = phi i8 [ 0, %0 ], [ %i_1, %.reset ]"   --->   Operation 13 'phi' 'i' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 14 [1/1] (2.09ns)   --->   "%exitcond_flatten = icmp eq i13 %indvar_flatten, -2784"   --->   Operation 14 'icmp' 'exitcond_flatten' <Predicate = true> <Delay = 2.09> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.09> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 15 [1/1] (1.67ns)   --->   "%indvar_flatten_next = add i13 %indvar_flatten, 1"   --->   Operation 15 'add' 'indvar_flatten_next' <Predicate = true> <Delay = 1.67> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.67> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 16 [1/1] (0.00ns)   --->   "br i1 %exitcond_flatten, label %2, label %.reset"   --->   Operation 16 'br' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 17 [1/1] (2.09ns)   --->   "%exitcond = icmp eq i13 %z_1, %indvars_iv" [/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:27]   --->   Operation 17 'icmp' 'exitcond' <Predicate = (!exitcond_flatten)> <Delay = 2.09> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.09> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 18 [1/1] (1.67ns)   --->   "%z_s = add i13 169, %z" [/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:27]   --->   Operation 18 'add' 'z_s' <Predicate = (!exitcond_flatten)> <Delay = 1.67> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.67> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 19 [1/1] (0.00ns) (grouped into LUT with out node tmp)   --->   "%z_1_mid2 = select i1 %exitcond, i13 %z_s, i13 %z_1" [/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:27]   --->   Operation 19 'select' 'z_1_mid2' <Predicate = (!exitcond_flatten)> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.69> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 20 [1/1] (1.24ns)   --->   "%i_mid2 = select i1 %exitcond, i8 0, i8 %i" [/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:27]   --->   Operation 20 'select' 'i_mid2' <Predicate = (!exitcond_flatten)> <Delay = 1.24> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.69> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 21 [1/1] (1.82ns)   --->   "%w_s = add i6 1, %w" [/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:26]   --->   Operation 21 'add' 'w_s' <Predicate = (!exitcond_flatten)> <Delay = 1.82> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.67> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 22 [1/1] (1.18ns)   --->   "%w_t_mid2_v = select i1 %exitcond, i6 %w_s, i6 %w" [/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:27]   --->   Operation 22 'select' 'w_t_mid2_v' <Predicate = (!exitcond_flatten)> <Delay = 1.18> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.69> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 23 [1/1] (0.00ns)   --->   "%tmp_3 = trunc i6 %w_t_mid2_v to i5" [/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:27]   --->   Operation 23 'trunc' 'tmp_3' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_2 : Operation 24 [1/1] (1.67ns)   --->   "%indvars_iv_next_dup = add i13 169, %indvars_iv" [/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:26]   --->   Operation 24 'add' 'indvars_iv_next_dup' <Predicate = (!exitcond_flatten)> <Delay = 1.67> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.67> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 25 [1/1] (0.69ns)   --->   "%indvars_iv_mid2 = select i1 %exitcond, i13 %indvars_iv_next_dup, i13 %indvars_iv" [/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:27]   --->   Operation 25 'select' 'indvars_iv_mid2' <Predicate = (!exitcond_flatten)> <Delay = 0.69> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.69> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 26 [1/1] (0.69ns)   --->   "%z_mid2 = select i1 %exitcond, i13 %z_s, i13 %z" [/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:27]   --->   Operation 26 'select' 'z_mid2' <Predicate = (!exitcond_flatten)> <Delay = 0.69> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.69> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 27 [1/1] (0.00ns)   --->   "%i_cast = zext i8 %i_mid2 to i32" [/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:27]   --->   Operation 27 'zext' 'i_cast' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_2 : Operation 28 [1/1] (0.00ns)   --->   "%lout_0_addr = getelementptr [169 x float]* %lout_0, i32 0, i32 %i_cast" [/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:27]   --->   Operation 28 'getelementptr' 'lout_0_addr' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_2 : Operation 29 [2/2] (3.25ns)   --->   "%lout_0_load = load float* %lout_0_addr, align 4" [/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:27]   --->   Operation 29 'load' 'lout_0_load' <Predicate = (!exitcond_flatten)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 169> <RAM>
+ST_2 : Operation 30 [1/1] (0.00ns)   --->   "%lout_1_addr = getelementptr [169 x float]* %lout_1, i32 0, i32 %i_cast" [/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:27]   --->   Operation 30 'getelementptr' 'lout_1_addr' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_2 : Operation 31 [2/2] (3.25ns)   --->   "%lout_1_load = load float* %lout_1_addr, align 4" [/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:27]   --->   Operation 31 'load' 'lout_1_load' <Predicate = (!exitcond_flatten)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 169> <RAM>
+ST_2 : Operation 32 [1/1] (0.00ns)   --->   "%lout_2_addr = getelementptr [169 x float]* %lout_2, i32 0, i32 %i_cast" [/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:27]   --->   Operation 32 'getelementptr' 'lout_2_addr' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_2 : Operation 33 [2/2] (3.25ns)   --->   "%lout_2_load = load float* %lout_2_addr, align 4" [/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:27]   --->   Operation 33 'load' 'lout_2_load' <Predicate = (!exitcond_flatten)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 169> <RAM>
+ST_2 : Operation 34 [1/1] (0.00ns)   --->   "%lout_3_addr = getelementptr [169 x float]* %lout_3, i32 0, i32 %i_cast" [/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:27]   --->   Operation 34 'getelementptr' 'lout_3_addr' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_2 : Operation 35 [2/2] (3.25ns)   --->   "%lout_3_load = load float* %lout_3_addr, align 4" [/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:27]   --->   Operation 35 'load' 'lout_3_load' <Predicate = (!exitcond_flatten)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 169> <RAM>
+ST_2 : Operation 36 [1/1] (0.00ns)   --->   "%lout_4_addr = getelementptr [169 x float]* %lout_4, i32 0, i32 %i_cast" [/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:27]   --->   Operation 36 'getelementptr' 'lout_4_addr' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_2 : Operation 37 [2/2] (3.25ns)   --->   "%lout_4_load = load float* %lout_4_addr, align 4" [/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:27]   --->   Operation 37 'load' 'lout_4_load' <Predicate = (!exitcond_flatten)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 169> <RAM>
+ST_2 : Operation 38 [1/1] (0.00ns)   --->   "%lout_5_addr = getelementptr [169 x float]* %lout_5, i32 0, i32 %i_cast" [/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:27]   --->   Operation 38 'getelementptr' 'lout_5_addr' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_2 : Operation 39 [2/2] (3.25ns)   --->   "%lout_5_load = load float* %lout_5_addr, align 4" [/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:27]   --->   Operation 39 'load' 'lout_5_load' <Predicate = (!exitcond_flatten)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 169> <RAM>
+ST_2 : Operation 40 [1/1] (0.00ns)   --->   "%lout_6_addr = getelementptr [169 x float]* %lout_6, i32 0, i32 %i_cast" [/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:27]   --->   Operation 40 'getelementptr' 'lout_6_addr' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_2 : Operation 41 [2/2] (3.25ns)   --->   "%lout_6_load = load float* %lout_6_addr, align 4" [/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:27]   --->   Operation 41 'load' 'lout_6_load' <Predicate = (!exitcond_flatten)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 169> <RAM>
+ST_2 : Operation 42 [1/1] (0.00ns)   --->   "%lout_7_addr = getelementptr [169 x float]* %lout_7, i32 0, i32 %i_cast" [/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:27]   --->   Operation 42 'getelementptr' 'lout_7_addr' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_2 : Operation 43 [2/2] (3.25ns)   --->   "%lout_7_load = load float* %lout_7_addr, align 4" [/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:27]   --->   Operation 43 'load' 'lout_7_load' <Predicate = (!exitcond_flatten)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 169> <RAM>
+ST_2 : Operation 44 [1/1] (0.00ns)   --->   "%lout_8_addr = getelementptr [169 x float]* %lout_8, i32 0, i32 %i_cast" [/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:27]   --->   Operation 44 'getelementptr' 'lout_8_addr' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_2 : Operation 45 [2/2] (3.25ns)   --->   "%lout_8_load = load float* %lout_8_addr, align 4" [/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:27]   --->   Operation 45 'load' 'lout_8_load' <Predicate = (!exitcond_flatten)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 169> <RAM>
+ST_2 : Operation 46 [1/1] (0.00ns)   --->   "%lout_9_addr = getelementptr [169 x float]* %lout_9, i32 0, i32 %i_cast" [/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:27]   --->   Operation 46 'getelementptr' 'lout_9_addr' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_2 : Operation 47 [2/2] (3.25ns)   --->   "%lout_9_load = load float* %lout_9_addr, align 4" [/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:27]   --->   Operation 47 'load' 'lout_9_load' <Predicate = (!exitcond_flatten)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 169> <RAM>
+ST_2 : Operation 48 [1/1] (0.00ns)   --->   "%lout_10_addr = getelementptr [169 x float]* %lout_10, i32 0, i32 %i_cast" [/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:27]   --->   Operation 48 'getelementptr' 'lout_10_addr' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_2 : Operation 49 [2/2] (3.25ns)   --->   "%lout_10_load = load float* %lout_10_addr, align 4" [/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:27]   --->   Operation 49 'load' 'lout_10_load' <Predicate = (!exitcond_flatten)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 169> <RAM>
+ST_2 : Operation 50 [1/1] (0.00ns)   --->   "%lout_11_addr = getelementptr [169 x float]* %lout_11, i32 0, i32 %i_cast" [/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:27]   --->   Operation 50 'getelementptr' 'lout_11_addr' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_2 : Operation 51 [2/2] (3.25ns)   --->   "%lout_11_load = load float* %lout_11_addr, align 4" [/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:27]   --->   Operation 51 'load' 'lout_11_load' <Predicate = (!exitcond_flatten)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 169> <RAM>
+ST_2 : Operation 52 [1/1] (0.00ns)   --->   "%lout_12_addr = getelementptr [169 x float]* %lout_12, i32 0, i32 %i_cast" [/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:27]   --->   Operation 52 'getelementptr' 'lout_12_addr' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_2 : Operation 53 [2/2] (3.25ns)   --->   "%lout_12_load = load float* %lout_12_addr, align 4" [/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:27]   --->   Operation 53 'load' 'lout_12_load' <Predicate = (!exitcond_flatten)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 169> <RAM>
+ST_2 : Operation 54 [1/1] (0.00ns)   --->   "%lout_13_addr = getelementptr [169 x float]* %lout_13, i32 0, i32 %i_cast" [/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:27]   --->   Operation 54 'getelementptr' 'lout_13_addr' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_2 : Operation 55 [2/2] (3.25ns)   --->   "%lout_13_load = load float* %lout_13_addr, align 4" [/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:27]   --->   Operation 55 'load' 'lout_13_load' <Predicate = (!exitcond_flatten)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 169> <RAM>
+ST_2 : Operation 56 [1/1] (0.00ns)   --->   "%lout_14_addr = getelementptr [169 x float]* %lout_14, i32 0, i32 %i_cast" [/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:27]   --->   Operation 56 'getelementptr' 'lout_14_addr' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_2 : Operation 57 [2/2] (3.25ns)   --->   "%lout_14_load = load float* %lout_14_addr, align 4" [/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:27]   --->   Operation 57 'load' 'lout_14_load' <Predicate = (!exitcond_flatten)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 169> <RAM>
+ST_2 : Operation 58 [1/1] (0.00ns)   --->   "%lout_15_addr = getelementptr [169 x float]* %lout_15, i32 0, i32 %i_cast" [/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:27]   --->   Operation 58 'getelementptr' 'lout_15_addr' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_2 : Operation 59 [2/2] (3.25ns)   --->   "%lout_15_load = load float* %lout_15_addr, align 4" [/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:27]   --->   Operation 59 'load' 'lout_15_load' <Predicate = (!exitcond_flatten)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 169> <RAM>
+ST_2 : Operation 60 [1/1] (0.00ns)   --->   "%lout_16_addr = getelementptr [169 x float]* %lout_16, i32 0, i32 %i_cast" [/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:27]   --->   Operation 60 'getelementptr' 'lout_16_addr' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_2 : Operation 61 [2/2] (3.25ns)   --->   "%lout_16_load = load float* %lout_16_addr, align 4" [/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:27]   --->   Operation 61 'load' 'lout_16_load' <Predicate = (!exitcond_flatten)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 169> <RAM>
+ST_2 : Operation 62 [1/1] (0.00ns)   --->   "%lout_17_addr = getelementptr [169 x float]* %lout_17, i32 0, i32 %i_cast" [/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:27]   --->   Operation 62 'getelementptr' 'lout_17_addr' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_2 : Operation 63 [2/2] (3.25ns)   --->   "%lout_17_load = load float* %lout_17_addr, align 4" [/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:27]   --->   Operation 63 'load' 'lout_17_load' <Predicate = (!exitcond_flatten)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 169> <RAM>
+ST_2 : Operation 64 [1/1] (0.00ns)   --->   "%lout_18_addr = getelementptr [169 x float]* %lout_18, i32 0, i32 %i_cast" [/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:27]   --->   Operation 64 'getelementptr' 'lout_18_addr' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_2 : Operation 65 [2/2] (3.25ns)   --->   "%lout_18_load = load float* %lout_18_addr, align 4" [/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:27]   --->   Operation 65 'load' 'lout_18_load' <Predicate = (!exitcond_flatten)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 169> <RAM>
+ST_2 : Operation 66 [1/1] (0.00ns)   --->   "%lout_19_addr = getelementptr [169 x float]* %lout_19, i32 0, i32 %i_cast" [/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:27]   --->   Operation 66 'getelementptr' 'lout_19_addr' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_2 : Operation 67 [2/2] (3.25ns)   --->   "%lout_19_load = load float* %lout_19_addr, align 4" [/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:27]   --->   Operation 67 'load' 'lout_19_load' <Predicate = (!exitcond_flatten)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 169> <RAM>
+ST_2 : Operation 68 [1/1] (0.00ns)   --->   "%lout_20_addr = getelementptr [169 x float]* %lout_20, i32 0, i32 %i_cast" [/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:27]   --->   Operation 68 'getelementptr' 'lout_20_addr' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_2 : Operation 69 [2/2] (3.25ns)   --->   "%lout_20_load = load float* %lout_20_addr, align 4" [/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:27]   --->   Operation 69 'load' 'lout_20_load' <Predicate = (!exitcond_flatten)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 169> <RAM>
+ST_2 : Operation 70 [1/1] (0.00ns)   --->   "%lout_21_addr = getelementptr [169 x float]* %lout_21, i32 0, i32 %i_cast" [/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:27]   --->   Operation 70 'getelementptr' 'lout_21_addr' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_2 : Operation 71 [2/2] (3.25ns)   --->   "%lout_21_load = load float* %lout_21_addr, align 4" [/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:27]   --->   Operation 71 'load' 'lout_21_load' <Predicate = (!exitcond_flatten)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 169> <RAM>
+ST_2 : Operation 72 [1/1] (0.00ns)   --->   "%lout_22_addr = getelementptr [169 x float]* %lout_22, i32 0, i32 %i_cast" [/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:27]   --->   Operation 72 'getelementptr' 'lout_22_addr' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_2 : Operation 73 [2/2] (3.25ns)   --->   "%lout_22_load = load float* %lout_22_addr, align 4" [/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:27]   --->   Operation 73 'load' 'lout_22_load' <Predicate = (!exitcond_flatten)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 169> <RAM>
+ST_2 : Operation 74 [1/1] (0.00ns)   --->   "%lout_23_addr = getelementptr [169 x float]* %lout_23, i32 0, i32 %i_cast" [/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:27]   --->   Operation 74 'getelementptr' 'lout_23_addr' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_2 : Operation 75 [2/2] (3.25ns)   --->   "%lout_23_load = load float* %lout_23_addr, align 4" [/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:27]   --->   Operation 75 'load' 'lout_23_load' <Predicate = (!exitcond_flatten)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 169> <RAM>
+ST_2 : Operation 76 [1/1] (0.00ns)   --->   "%lout_24_addr = getelementptr [169 x float]* %lout_24, i32 0, i32 %i_cast" [/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:27]   --->   Operation 76 'getelementptr' 'lout_24_addr' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_2 : Operation 77 [2/2] (3.25ns)   --->   "%lout_24_load = load float* %lout_24_addr, align 4" [/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:27]   --->   Operation 77 'load' 'lout_24_load' <Predicate = (!exitcond_flatten)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 169> <RAM>
+ST_2 : Operation 78 [1/1] (0.00ns)   --->   "%lout_25_addr = getelementptr [169 x float]* %lout_25, i32 0, i32 %i_cast" [/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:27]   --->   Operation 78 'getelementptr' 'lout_25_addr' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_2 : Operation 79 [2/2] (3.25ns)   --->   "%lout_25_load = load float* %lout_25_addr, align 4" [/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:27]   --->   Operation 79 'load' 'lout_25_load' <Predicate = (!exitcond_flatten)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 169> <RAM>
+ST_2 : Operation 80 [1/1] (0.00ns)   --->   "%lout_26_addr = getelementptr [169 x float]* %lout_26, i32 0, i32 %i_cast" [/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:27]   --->   Operation 80 'getelementptr' 'lout_26_addr' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_2 : Operation 81 [2/2] (3.25ns)   --->   "%lout_26_load = load float* %lout_26_addr, align 4" [/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:27]   --->   Operation 81 'load' 'lout_26_load' <Predicate = (!exitcond_flatten)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 169> <RAM>
+ST_2 : Operation 82 [1/1] (0.00ns)   --->   "%lout_27_addr = getelementptr [169 x float]* %lout_27, i32 0, i32 %i_cast" [/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:27]   --->   Operation 82 'getelementptr' 'lout_27_addr' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_2 : Operation 83 [2/2] (3.25ns)   --->   "%lout_27_load = load float* %lout_27_addr, align 4" [/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:27]   --->   Operation 83 'load' 'lout_27_load' <Predicate = (!exitcond_flatten)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 169> <RAM>
+ST_2 : Operation 84 [1/1] (0.00ns)   --->   "%lout_28_addr = getelementptr [169 x float]* %lout_28, i32 0, i32 %i_cast" [/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:27]   --->   Operation 84 'getelementptr' 'lout_28_addr' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_2 : Operation 85 [2/2] (3.25ns)   --->   "%lout_28_load = load float* %lout_28_addr, align 4" [/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:27]   --->   Operation 85 'load' 'lout_28_load' <Predicate = (!exitcond_flatten)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 169> <RAM>
+ST_2 : Operation 86 [1/1] (0.00ns)   --->   "%lout_29_addr = getelementptr [169 x float]* %lout_29, i32 0, i32 %i_cast" [/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:27]   --->   Operation 86 'getelementptr' 'lout_29_addr' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_2 : Operation 87 [2/2] (3.25ns)   --->   "%lout_29_load = load float* %lout_29_addr, align 4" [/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:27]   --->   Operation 87 'load' 'lout_29_load' <Predicate = (!exitcond_flatten)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 169> <RAM>
+ST_2 : Operation 88 [1/1] (0.00ns)   --->   "%lout_30_addr = getelementptr [169 x float]* %lout_30, i32 0, i32 %i_cast" [/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:27]   --->   Operation 88 'getelementptr' 'lout_30_addr' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_2 : Operation 89 [2/2] (3.25ns)   --->   "%lout_30_load = load float* %lout_30_addr, align 4" [/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:27]   --->   Operation 89 'load' 'lout_30_load' <Predicate = (!exitcond_flatten)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 169> <RAM>
+ST_2 : Operation 90 [1/1] (0.00ns)   --->   "%lout_31_addr = getelementptr [169 x float]* %lout_31, i32 0, i32 %i_cast" [/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:27]   --->   Operation 90 'getelementptr' 'lout_31_addr' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_2 : Operation 91 [2/2] (3.25ns)   --->   "%lout_31_load = load float* %lout_31_addr, align 4" [/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:27]   --->   Operation 91 'load' 'lout_31_load' <Predicate = (!exitcond_flatten)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 169> <RAM>
+ST_2 : Operation 92 [1/1] (1.91ns)   --->   "%i_1 = add i8 1, %i_mid2" [/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:27]   --->   Operation 92 'add' 'i_1' <Predicate = (!exitcond_flatten)> <Delay = 1.91> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.67> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 93 [1/1] (1.67ns) (out node of the LUT)   --->   "%tmp = add i13 1, %z_1_mid2" [/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:27]   --->   Operation 93 'add' 'tmp' <Predicate = (!exitcond_flatten)> <Delay = 1.67> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.67> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+
+State 3 <SV = 2> <Delay = 6.45>
+ST_3 : Operation 94 [1/2] (3.25ns)   --->   "%lout_0_load = load float* %lout_0_addr, align 4" [/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:27]   --->   Operation 94 'load' 'lout_0_load' <Predicate = (!exitcond_flatten)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 169> <RAM>
+ST_3 : Operation 95 [1/2] (3.25ns)   --->   "%lout_1_load = load float* %lout_1_addr, align 4" [/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:27]   --->   Operation 95 'load' 'lout_1_load' <Predicate = (!exitcond_flatten)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 169> <RAM>
+ST_3 : Operation 96 [1/2] (3.25ns)   --->   "%lout_2_load = load float* %lout_2_addr, align 4" [/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:27]   --->   Operation 96 'load' 'lout_2_load' <Predicate = (!exitcond_flatten)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 169> <RAM>
+ST_3 : Operation 97 [1/2] (3.25ns)   --->   "%lout_3_load = load float* %lout_3_addr, align 4" [/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:27]   --->   Operation 97 'load' 'lout_3_load' <Predicate = (!exitcond_flatten)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 169> <RAM>
+ST_3 : Operation 98 [1/2] (3.25ns)   --->   "%lout_4_load = load float* %lout_4_addr, align 4" [/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:27]   --->   Operation 98 'load' 'lout_4_load' <Predicate = (!exitcond_flatten)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 169> <RAM>
+ST_3 : Operation 99 [1/2] (3.25ns)   --->   "%lout_5_load = load float* %lout_5_addr, align 4" [/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:27]   --->   Operation 99 'load' 'lout_5_load' <Predicate = (!exitcond_flatten)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 169> <RAM>
+ST_3 : Operation 100 [1/2] (3.25ns)   --->   "%lout_6_load = load float* %lout_6_addr, align 4" [/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:27]   --->   Operation 100 'load' 'lout_6_load' <Predicate = (!exitcond_flatten)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 169> <RAM>
+ST_3 : Operation 101 [1/2] (3.25ns)   --->   "%lout_7_load = load float* %lout_7_addr, align 4" [/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:27]   --->   Operation 101 'load' 'lout_7_load' <Predicate = (!exitcond_flatten)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 169> <RAM>
+ST_3 : Operation 102 [1/2] (3.25ns)   --->   "%lout_8_load = load float* %lout_8_addr, align 4" [/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:27]   --->   Operation 102 'load' 'lout_8_load' <Predicate = (!exitcond_flatten)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 169> <RAM>
+ST_3 : Operation 103 [1/2] (3.25ns)   --->   "%lout_9_load = load float* %lout_9_addr, align 4" [/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:27]   --->   Operation 103 'load' 'lout_9_load' <Predicate = (!exitcond_flatten)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 169> <RAM>
+ST_3 : Operation 104 [1/2] (3.25ns)   --->   "%lout_10_load = load float* %lout_10_addr, align 4" [/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:27]   --->   Operation 104 'load' 'lout_10_load' <Predicate = (!exitcond_flatten)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 169> <RAM>
+ST_3 : Operation 105 [1/2] (3.25ns)   --->   "%lout_11_load = load float* %lout_11_addr, align 4" [/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:27]   --->   Operation 105 'load' 'lout_11_load' <Predicate = (!exitcond_flatten)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 169> <RAM>
+ST_3 : Operation 106 [1/2] (3.25ns)   --->   "%lout_12_load = load float* %lout_12_addr, align 4" [/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:27]   --->   Operation 106 'load' 'lout_12_load' <Predicate = (!exitcond_flatten)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 169> <RAM>
+ST_3 : Operation 107 [1/2] (3.25ns)   --->   "%lout_13_load = load float* %lout_13_addr, align 4" [/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:27]   --->   Operation 107 'load' 'lout_13_load' <Predicate = (!exitcond_flatten)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 169> <RAM>
+ST_3 : Operation 108 [1/2] (3.25ns)   --->   "%lout_14_load = load float* %lout_14_addr, align 4" [/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:27]   --->   Operation 108 'load' 'lout_14_load' <Predicate = (!exitcond_flatten)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 169> <RAM>
+ST_3 : Operation 109 [1/2] (3.25ns)   --->   "%lout_15_load = load float* %lout_15_addr, align 4" [/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:27]   --->   Operation 109 'load' 'lout_15_load' <Predicate = (!exitcond_flatten)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 169> <RAM>
+ST_3 : Operation 110 [1/2] (3.25ns)   --->   "%lout_16_load = load float* %lout_16_addr, align 4" [/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:27]   --->   Operation 110 'load' 'lout_16_load' <Predicate = (!exitcond_flatten)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 169> <RAM>
+ST_3 : Operation 111 [1/2] (3.25ns)   --->   "%lout_17_load = load float* %lout_17_addr, align 4" [/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:27]   --->   Operation 111 'load' 'lout_17_load' <Predicate = (!exitcond_flatten)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 169> <RAM>
+ST_3 : Operation 112 [1/2] (3.25ns)   --->   "%lout_18_load = load float* %lout_18_addr, align 4" [/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:27]   --->   Operation 112 'load' 'lout_18_load' <Predicate = (!exitcond_flatten)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 169> <RAM>
+ST_3 : Operation 113 [1/2] (3.25ns)   --->   "%lout_19_load = load float* %lout_19_addr, align 4" [/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:27]   --->   Operation 113 'load' 'lout_19_load' <Predicate = (!exitcond_flatten)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 169> <RAM>
+ST_3 : Operation 114 [1/2] (3.25ns)   --->   "%lout_20_load = load float* %lout_20_addr, align 4" [/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:27]   --->   Operation 114 'load' 'lout_20_load' <Predicate = (!exitcond_flatten)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 169> <RAM>
+ST_3 : Operation 115 [1/2] (3.25ns)   --->   "%lout_21_load = load float* %lout_21_addr, align 4" [/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:27]   --->   Operation 115 'load' 'lout_21_load' <Predicate = (!exitcond_flatten)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 169> <RAM>
+ST_3 : Operation 116 [1/2] (3.25ns)   --->   "%lout_22_load = load float* %lout_22_addr, align 4" [/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:27]   --->   Operation 116 'load' 'lout_22_load' <Predicate = (!exitcond_flatten)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 169> <RAM>
+ST_3 : Operation 117 [1/2] (3.25ns)   --->   "%lout_23_load = load float* %lout_23_addr, align 4" [/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:27]   --->   Operation 117 'load' 'lout_23_load' <Predicate = (!exitcond_flatten)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 169> <RAM>
+ST_3 : Operation 118 [1/2] (3.25ns)   --->   "%lout_24_load = load float* %lout_24_addr, align 4" [/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:27]   --->   Operation 118 'load' 'lout_24_load' <Predicate = (!exitcond_flatten)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 169> <RAM>
+ST_3 : Operation 119 [1/2] (3.25ns)   --->   "%lout_25_load = load float* %lout_25_addr, align 4" [/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:27]   --->   Operation 119 'load' 'lout_25_load' <Predicate = (!exitcond_flatten)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 169> <RAM>
+ST_3 : Operation 120 [1/2] (3.25ns)   --->   "%lout_26_load = load float* %lout_26_addr, align 4" [/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:27]   --->   Operation 120 'load' 'lout_26_load' <Predicate = (!exitcond_flatten)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 169> <RAM>
+ST_3 : Operation 121 [1/2] (3.25ns)   --->   "%lout_27_load = load float* %lout_27_addr, align 4" [/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:27]   --->   Operation 121 'load' 'lout_27_load' <Predicate = (!exitcond_flatten)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 169> <RAM>
+ST_3 : Operation 122 [1/2] (3.25ns)   --->   "%lout_28_load = load float* %lout_28_addr, align 4" [/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:27]   --->   Operation 122 'load' 'lout_28_load' <Predicate = (!exitcond_flatten)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 169> <RAM>
+ST_3 : Operation 123 [1/2] (3.25ns)   --->   "%lout_29_load = load float* %lout_29_addr, align 4" [/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:27]   --->   Operation 123 'load' 'lout_29_load' <Predicate = (!exitcond_flatten)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 169> <RAM>
+ST_3 : Operation 124 [1/2] (3.25ns)   --->   "%lout_30_load = load float* %lout_30_addr, align 4" [/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:27]   --->   Operation 124 'load' 'lout_30_load' <Predicate = (!exitcond_flatten)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 169> <RAM>
+ST_3 : Operation 125 [1/2] (3.25ns)   --->   "%lout_31_load = load float* %lout_31_addr, align 4" [/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:27]   --->   Operation 125 'load' 'lout_31_load' <Predicate = (!exitcond_flatten)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 169> <RAM>
+ST_3 : Operation 126 [1/1] (3.20ns)   --->   "%tmp_2 = call float @_ssdm_op_Mux.ap_auto.32float.i5(float %lout_0_load, float %lout_1_load, float %lout_2_load, float %lout_3_load, float %lout_4_load, float %lout_5_load, float %lout_6_load, float %lout_7_load, float %lout_8_load, float %lout_9_load, float %lout_10_load, float %lout_11_load, float %lout_12_load, float %lout_13_load, float %lout_14_load, float %lout_15_load, float %lout_16_load, float %lout_17_load, float %lout_18_load, float %lout_19_load, float %lout_20_load, float %lout_21_load, float %lout_22_load, float %lout_23_load, float %lout_24_load, float %lout_25_load, float %lout_26_load, float %lout_27_load, float %lout_28_load, float %lout_29_load, float %lout_30_load, float %lout_31_load, i5 %tmp_3)" [/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:27]   --->   Operation 126 'mux' 'tmp_2' <Predicate = (!exitcond_flatten)> <Delay = 3.20> <Core = "MuxnS">   --->   Core 31 'MuxnS' <Latency = 0> <II = 1> <Delay = 3.20> <FuncUnit> <Opcode : 'mux'> <InPorts = 2> <OutPorts = 1>
+
+State 4 <SV = 3> <Delay = 3.63>
+ST_4 : Operation 127 [1/1] (0.00ns)   --->   "%tmp_1 = call i32 (...)* @_ssdm_op_SpecRegionBegin([12 x i8]* @p_str3)" [/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:27]   --->   Operation 127 'specregionbegin' 'tmp_1' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_4 : Operation 128 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecPipeline(i32 -1, i32 1, i32 1, i32 0, [1 x i8]* @p_str1) nounwind" [/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:28]   --->   Operation 128 'specpipeline' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_4 : Operation 129 [1/1] (3.63ns)   --->   "call void @_ssdm_op_Write.ap_fifo.floatP(float* %C, float %tmp_2)" [/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:29]   --->   Operation 129 'write' <Predicate = (!exitcond_flatten)> <Delay = 3.63> <Core = "FIFO_SRL">   --->   Core 36 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 0> <FIFO>
+ST_4 : Operation 130 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_SpecRegionEnd([12 x i8]* @p_str3, i32 %tmp_1)" [/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:30]   --->   Operation 130 'specregionend' 'empty' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_4 : Operation 131 [1/1] (0.00ns)   --->   "br label %1" [/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:27]   --->   Operation 131 'br' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+
+State 5 <SV = 2> <Delay = 0.00>
+ST_5 : Operation 132 [1/1] (0.00ns)   --->   "ret void" [/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:32]   --->   Operation 132 'ret' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 2.7ns.
+
+ <State 1>: 1.77ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('indvar_flatten') with incoming values : ('indvar_flatten_next') [37]  (1.77 ns)
+
+ <State 2>: 6.6ns
+The critical path consists of the following:
+	'phi' operation ('indvars_iv', /home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:27) with incoming values : ('indvars_iv_mid2', /home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:27) [38]  (0 ns)
+	'icmp' operation ('exitcond', /home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:27) [47]  (2.1 ns)
+	'select' operation ('i_mid2', /home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:27) [50]  (1.25 ns)
+	'getelementptr' operation ('lout_20_addr', /home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:27) [100]  (0 ns)
+	'load' operation ('lout_20_load', /home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:27) on array 'lout_20' [101]  (3.25 ns)
+
+ <State 3>: 6.46ns
+The critical path consists of the following:
+	'load' operation ('lout_0_load', /home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:27) on array 'lout_0' [61]  (3.25 ns)
+	'mux' operation ('tmp_2', /home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:27) [124]  (3.21 ns)
+
+ <State 4>: 3.63ns
+The critical path consists of the following:
+	fifo write on port 'C' (/home/sdsoc/yc_ws/sdx_ws/proj/YOLO-master/cpp/HGUFPGAConv/HGUConv_0/src/kernel.cpp:29) [125]  (3.63 ns)
+
+ <State 5>: 0ns
+The critical path consists of the following:
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

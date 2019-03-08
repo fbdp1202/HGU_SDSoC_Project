@@ -1,0 +1,22 @@
+digraph dm_graph {
+v0 [label = "v0:gemm_fpga" ,style=filled];
+v1 [label = "v1:XFER(IN)\nA @42\nARRAY\n" ,style=filled,fillcolor = green];
+v2 [label = "v2:XFER(IN)\nB @42\nARRAY\n" ,style=filled,fillcolor = green];
+v3 [label = "v3:call 'cal_gemm' in 'gemm.c' @42 (async_id:-1) (resource id:-1)\n" ,style=filled,fillcolor = red];
+v4 [label = "v4:XFER(OUT)\nC @42\nARRAY\n" ,style=filled,fillcolor = yellow];
+v5 [label = "v5:cf_wait(): \nXFER(IN)\nA @42\nARRAY\nXFER(OUT)\nC @42\nARRAY\nXFER(IN)\nB @42\nARRAY\n\n" ,style=filled,fillcolor = cyan];
+subgraph cluster0 {
+v1;
+v2;
+v3;
+v4;
+v5;
+label = "call 'cal_gemm' in 'gemm.c' @42 (async_id:-1) (resource id:-1)\n";
+}
+v1 -> v3 [label = "RAW/0"];
+v2 -> v3 [label = "RAW/0"];
+v3 -> v4 [label = "RAW/0"];
+v4 -> v5 [label = "SEQ", style = dotted];
+v0 -> v1 [label = "SEQ", style = dotted];
+v0 -> v2 [label = "SEQ", style = dotted];
+}

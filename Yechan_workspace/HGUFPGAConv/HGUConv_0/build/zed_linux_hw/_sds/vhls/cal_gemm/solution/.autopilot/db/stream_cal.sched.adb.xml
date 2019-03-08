@@ -1,0 +1,201 @@
+<stg><name>stream_cal</name>
+
+
+<trans_list>
+
+<trans id="15" from="1" to="2">
+<condition id="0">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="16" from="2" to="3">
+<condition id="1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="17" from="3" to="4">
+<condition id="2">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+</trans_list>
+
+
+
+<state_list>
+
+<state id="1" st_id="1">
+
+<operation id="5" st_id="1" stage="1" lat="1">
+<core>FIFO</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="68" bw="32" op_0_bw="32">
+<![CDATA[
+codeRepl:2  %inStream1_V = alloca float, align 4
+
+]]></Node>
+<StgValue><ssdm name="inStream1_V"/></StgValue>
+</operation>
+
+<operation id="6" st_id="1" stage="2" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="71" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="32">
+<![CDATA[
+codeRepl:5  call fastcc void @stream_cal_Loop_1_pr(float* %B, float* %inStream1_V)
+
+]]></Node>
+<StgValue><ssdm name=""/></StgValue>
+</operation>
+</state>
+
+<state id="2" st_id="2">
+
+<operation id="7" st_id="2" stage="1" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="71" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="32">
+<![CDATA[
+codeRepl:5  call fastcc void @stream_cal_Loop_1_pr(float* %B, float* %inStream1_V)
+
+]]></Node>
+<StgValue><ssdm name=""/></StgValue>
+</operation>
+</state>
+
+<state id="3" st_id="3">
+
+<operation id="8" st_id="3" stage="2" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="72" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="32" op_3_bw="32" op_4_bw="32" op_5_bw="32" op_6_bw="32" op_7_bw="32" op_8_bw="32" op_9_bw="32" op_10_bw="32" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="32" op_16_bw="32" op_17_bw="32" op_18_bw="32" op_19_bw="32" op_20_bw="32" op_21_bw="32" op_22_bw="32" op_23_bw="32" op_24_bw="32" op_25_bw="32" op_26_bw="32" op_27_bw="32" op_28_bw="32" op_29_bw="32" op_30_bw="32" op_31_bw="32" op_32_bw="32" op_33_bw="32" op_34_bw="32" op_35_bw="32" op_36_bw="32" op_37_bw="32" op_38_bw="32" op_39_bw="32" op_40_bw="32" op_41_bw="32" op_42_bw="32" op_43_bw="32" op_44_bw="32" op_45_bw="32" op_46_bw="32" op_47_bw="32" op_48_bw="32" op_49_bw="32" op_50_bw="32" op_51_bw="32" op_52_bw="32" op_53_bw="32" op_54_bw="32" op_55_bw="32" op_56_bw="32" op_57_bw="32" op_58_bw="32" op_59_bw="32" op_60_bw="32" op_61_bw="32" op_62_bw="32" op_63_bw="32" op_64_bw="32" op_65_bw="32">
+<![CDATA[
+codeRepl:6  call fastcc void @calulation(float* %inStream1_V, [144 x float]* %la_0, [144 x float]* %la_1, [144 x float]* %la_2, [144 x float]* %la_3, [144 x float]* %la_4, [144 x float]* %la_5, [144 x float]* %la_6, [144 x float]* %la_7, [144 x float]* %la_8, [144 x float]* %la_9, [144 x float]* %la_10, [144 x float]* %la_11, [144 x float]* %la_12, [144 x float]* %la_13, [144 x float]* %la_14, [144 x float]* %la_15, [144 x float]* %la_16, [144 x float]* %la_17, [144 x float]* %la_18, [144 x float]* %la_19, [144 x float]* %la_20, [144 x float]* %la_21, [144 x float]* %la_22, [144 x float]* %la_23, [144 x float]* %la_24, [144 x float]* %la_25, [144 x float]* %la_26, [144 x float]* %la_27, [144 x float]* %la_28, [144 x float]* %la_29, [144 x float]* %la_30, [144 x float]* %la_31, [169 x float]* %lout_0, [169 x float]* %lout_1, [169 x float]* %lout_2, [169 x float]* %lout_3, [169 x float]* %lout_4, [169 x float]* %lout_5, [169 x float]* %lout_6, [169 x float]* %lout_7, [169 x float]* %lout_8, [169 x float]* %lout_9, [169 x float]* %lout_10, [169 x float]* %lout_11, [169 x float]* %lout_12, [169 x float]* %lout_13, [169 x float]* %lout_14, [169 x float]* %lout_15, [169 x float]* %lout_16, [169 x float]* %lout_17, [169 x float]* %lout_18, [169 x float]* %lout_19, [169 x float]* %lout_20, [169 x float]* %lout_21, [169 x float]* %lout_22, [169 x float]* %lout_23, [169 x float]* %lout_24, [169 x float]* %lout_25, [169 x float]* %lout_26, [169 x float]* %lout_27, [169 x float]* %lout_28, [169 x float]* %lout_29, [169 x float]* %lout_30, [169 x float]* %lout_31)
+
+]]></Node>
+<StgValue><ssdm name=""/></StgValue>
+</operation>
+</state>
+
+<state id="4" st_id="4">
+
+<operation id="9" st_id="4" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="66" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="0">
+<![CDATA[
+codeRepl:0  call void (...)* @_ssdm_op_SpecDataflowPipeline(i32 -1, [1 x i8]* @p_str1) nounwind
+
+]]></Node>
+<StgValue><ssdm name=""/></StgValue>
+</operation>
+
+<operation id="10" st_id="4" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="67" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="0" op_3_bw="32" op_4_bw="32" op_5_bw="0" op_6_bw="32" op_7_bw="32" op_8_bw="0" op_9_bw="0" op_10_bw="0" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="0" op_16_bw="0">
+<![CDATA[
+codeRepl:1  call void (...)* @_ssdm_op_SpecInterface(float* %B, [8 x i8]* @p_str6, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind
+
+]]></Node>
+<StgValue><ssdm name=""/></StgValue>
+</operation>
+
+<operation id="11" st_id="4" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="69" bw="32" op_0_bw="32" op_1_bw="0" op_2_bw="32" op_3_bw="0" op_4_bw="0" op_5_bw="32" op_6_bw="32" op_7_bw="32" op_8_bw="32">
+<![CDATA[
+codeRepl:3  %empty = call i32 (...)* @_ssdm_op_SpecChannel([12 x i8]* @inStream1_OC_V_str, i32 1, [1 x i8]* @p_str21, [1 x i8]* @p_str21, i32 128, i32 128, float* %inStream1_V, float* %inStream1_V)
+
+]]></Node>
+<StgValue><ssdm name="empty"/></StgValue>
+</operation>
+
+<operation id="12" st_id="4" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="70" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="0" op_3_bw="32" op_4_bw="32" op_5_bw="0" op_6_bw="32" op_7_bw="32" op_8_bw="0" op_9_bw="0" op_10_bw="0" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="0" op_16_bw="0">
+<![CDATA[
+codeRepl:4  call void (...)* @_ssdm_op_SpecInterface(float* %inStream1_V, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str22, i32 0, i32 0, [1 x i8]* @p_str23, [1 x i8]* @p_str24, [1 x i8]* @p_str25, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str26, [1 x i8]* @p_str27)
+
+]]></Node>
+<StgValue><ssdm name=""/></StgValue>
+</operation>
+
+<operation id="13" st_id="4" stage="1" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="72" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="32" op_3_bw="32" op_4_bw="32" op_5_bw="32" op_6_bw="32" op_7_bw="32" op_8_bw="32" op_9_bw="32" op_10_bw="32" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="32" op_16_bw="32" op_17_bw="32" op_18_bw="32" op_19_bw="32" op_20_bw="32" op_21_bw="32" op_22_bw="32" op_23_bw="32" op_24_bw="32" op_25_bw="32" op_26_bw="32" op_27_bw="32" op_28_bw="32" op_29_bw="32" op_30_bw="32" op_31_bw="32" op_32_bw="32" op_33_bw="32" op_34_bw="32" op_35_bw="32" op_36_bw="32" op_37_bw="32" op_38_bw="32" op_39_bw="32" op_40_bw="32" op_41_bw="32" op_42_bw="32" op_43_bw="32" op_44_bw="32" op_45_bw="32" op_46_bw="32" op_47_bw="32" op_48_bw="32" op_49_bw="32" op_50_bw="32" op_51_bw="32" op_52_bw="32" op_53_bw="32" op_54_bw="32" op_55_bw="32" op_56_bw="32" op_57_bw="32" op_58_bw="32" op_59_bw="32" op_60_bw="32" op_61_bw="32" op_62_bw="32" op_63_bw="32" op_64_bw="32" op_65_bw="32">
+<![CDATA[
+codeRepl:6  call fastcc void @calulation(float* %inStream1_V, [144 x float]* %la_0, [144 x float]* %la_1, [144 x float]* %la_2, [144 x float]* %la_3, [144 x float]* %la_4, [144 x float]* %la_5, [144 x float]* %la_6, [144 x float]* %la_7, [144 x float]* %la_8, [144 x float]* %la_9, [144 x float]* %la_10, [144 x float]* %la_11, [144 x float]* %la_12, [144 x float]* %la_13, [144 x float]* %la_14, [144 x float]* %la_15, [144 x float]* %la_16, [144 x float]* %la_17, [144 x float]* %la_18, [144 x float]* %la_19, [144 x float]* %la_20, [144 x float]* %la_21, [144 x float]* %la_22, [144 x float]* %la_23, [144 x float]* %la_24, [144 x float]* %la_25, [144 x float]* %la_26, [144 x float]* %la_27, [144 x float]* %la_28, [144 x float]* %la_29, [144 x float]* %la_30, [144 x float]* %la_31, [169 x float]* %lout_0, [169 x float]* %lout_1, [169 x float]* %lout_2, [169 x float]* %lout_3, [169 x float]* %lout_4, [169 x float]* %lout_5, [169 x float]* %lout_6, [169 x float]* %lout_7, [169 x float]* %lout_8, [169 x float]* %lout_9, [169 x float]* %lout_10, [169 x float]* %lout_11, [169 x float]* %lout_12, [169 x float]* %lout_13, [169 x float]* %lout_14, [169 x float]* %lout_15, [169 x float]* %lout_16, [169 x float]* %lout_17, [169 x float]* %lout_18, [169 x float]* %lout_19, [169 x float]* %lout_20, [169 x float]* %lout_21, [169 x float]* %lout_22, [169 x float]* %lout_23, [169 x float]* %lout_24, [169 x float]* %lout_25, [169 x float]* %lout_26, [169 x float]* %lout_27, [169 x float]* %lout_28, [169 x float]* %lout_29, [169 x float]* %lout_30, [169 x float]* %lout_31)
+
+]]></Node>
+<StgValue><ssdm name=""/></StgValue>
+</operation>
+
+<operation id="14" st_id="4" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="73" bw="0">
+<![CDATA[
+codeRepl:7  ret void
+
+]]></Node>
+<StgValue><ssdm name=""/></StgValue>
+</operation>
+</state>
+</state_list>
+
+
+<ports>
+</ports>
+
+
+<dataflows>
+</dataflows>
+
+
+</stg>
