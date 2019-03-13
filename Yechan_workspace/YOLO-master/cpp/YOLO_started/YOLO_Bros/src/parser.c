@@ -502,8 +502,8 @@ route_layer parse_route(list *options, size_params params, network *net)
         if (l[i] == ',') ++n;
     }
 
-    int *layers = calloc(n, sizeof(int));
-    int *sizes = calloc(n, sizeof(int));
+    int *layers = (int *)calloc(n, sizeof(int));
+    int *sizes = (int *)calloc(n, sizeof(int));
     for(i = 0; i < n; ++i){
         int index = atoi(l);
         l = strchr(l, ',')+1;
@@ -602,8 +602,8 @@ void parse_net_options(list *options, network *net)
         for(i = 0; i < len; ++i){
             if (l[i] == ',') ++n;
         }
-        int *steps = calloc(n, sizeof(int));
-        float *scales = calloc(n, sizeof(float));
+        int *steps = (int *)calloc(n, sizeof(int));
+        float *scales = (float *)calloc(n, sizeof(float));
         for(i = 0; i < n; ++i){
             int step    = atoi(l);
             float scale = atof(p);

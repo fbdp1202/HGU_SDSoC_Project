@@ -1,8 +1,13 @@
 #include "kernel.h"
 #include <hls_stream.h>
-#include "sds_utils.h"
-#include <iostream>
-#include <stdlib.h>
+
+
+
+    // readA: for (int itr = 0, i = 0, j = 0; itr < 32*144; itr++, j++) {
+    // #pragma HLS PIPELINE
+    //     if (j == 144) { j = 0; i++; }
+    //     la[i][j] = A[itr];
+    // }
 
 void read_A(float *A, float la[32][144]){
     for (int itr = 0, i = 0, j = 0; itr < 32*144; itr++, j++) {
@@ -11,6 +16,16 @@ void read_A(float *A, float la[32][144]){
         la[i][j] = A[itr];
     }
 }
+
+// void read_A(float *A, float la[32][144]){
+// 	int i, j, k;
+//     for(i = 0, k = 0; i < 32; i++, k+=144){
+//         for(j = 0; j < 144; j++){
+// #pragma HLS PIPELINE
+//             la[i][j] = A[k+j];
+//         }
+//     }
+// }
 
 void out_initial(float lout[32][169]){
     for (int i = 0, j = 0; i < 32; j++) {
@@ -23,14 +38,14 @@ void out_initial(float lout[32][169]){
 // void write_out(float lout[32][169], float *C){
 //     for(int itr=0, w = 0, i=0; itr < 32*169; itr++, i++){
 //         #pragma HLS PIPELINE
-//             if (i == 169) { i = 0; w++; }
-//             C[itr] = lout[w][i];
+//             if (i == 32) { i = 0; w++; }
+//             C[itr] = lout[i][w];
 //     }
 // }
 
 void write_out(float lout[32][169], float *C){
-    int w,z,i;
-    for(w = 0, z = 0; w < 32; w++){
+	int w,z,i;
+	for(w = 0, z = 0; w < 32; w++){
         for(i = 0; i < 169; i++, z++){
         #pragma HLS PIPELINE
             C[z] = lout[w][i];
@@ -39,17 +54,16 @@ void write_out(float lout[32][169], float *C){
 }
 
 void cal_initial(float *A, float la[32][144], float lout[32][169]){
-    #pragma HLS dataflow
-    out_initial(lout);
-    read_A(A, la);
+	#pragma HLS dataflow
+	out_initial(lout);
+	read_A(A, la);
 }
 
 void read_B(float *B, hls::stream<float> &inStream){
 #pragma HLS INLINE
-    int i;
-    for(i = 0; i < 144*169; i++){
-    #pragma HLS PIPELINE
-        inStream << B[i];
+    for(int i = 0; i < 144*169; i++){
+	#pragma HLS PIPELINE
+    	inStream << B[i];
     }
 }
 
@@ -74,8 +88,8 @@ void stream_cal(float la[32][144],
                 float lout[32][169]){
     hls::stream<float> inStream1;
     #pragma HLS STREAM variable=inStream1  depth=128
-    
-    #pragma HLS dataflow
+	
+	#pragma HLS dataflow
     read_B(B, inStream1);
     calulation(inStream1, la, lout);
 }
@@ -96,9 +110,8 @@ void stream_cal(float la[32][144],
                        B[0:144*169],\
                        C[0:32*169])
 void cal_gemm(float *A, float *B, float *C){
-    
     float la[32][144];
-    #pragma HLS ARRAY_PARTITION variable=la dim=1 complete
+	#pragma HLS ARRAY_PARTITION variable=la dim=1 complete
 //    #pragma HLS ARRAY_PARTITION variable=la dim=2 block factor=2
 
     float lout[32][169];
@@ -107,14 +120,6 @@ void cal_gemm(float *A, float *B, float *C){
 // initialize
     cal_initial(A, la, lout);
     stream_cal(la, B, lout);
-    write_out(lout, C);
+	write_out(lout, C);
 // calculation
 }
-
-// void call_gemm(float *A, float *B, float *C) {
-//     sds_utils::perf_counter ctr1;
-//     ctr1.start();
-//     cal_gemm(A, B, C);
-//     ctr1.stop();
-//     std::cout << "ctr1: "<< ctr1 << std::endl;
-// }

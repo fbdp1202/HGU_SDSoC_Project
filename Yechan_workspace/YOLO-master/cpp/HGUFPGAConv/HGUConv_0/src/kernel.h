@@ -5,8 +5,8 @@
 extern "C" {
 #endif
 
+
 void cal_gemm(float *A, float *B, float *C);
-// void call_gemm(float *A, float *B, float *C);
 
 #ifdef __cplusplus
 }
