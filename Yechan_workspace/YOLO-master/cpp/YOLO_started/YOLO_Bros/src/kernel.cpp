@@ -92,7 +92,7 @@ void stream_cal(float la[32][144],
 #pragma SDS data access_pattern( A:SEQUENTIAL,\
                                  B:SEQUENTIAL,\
                                  C:SEQUENTIAL)
-#pragma SDS data copy( A[0:32*144],\
+#pragma SDS data zero_copy( A[0:32*144],\
                        B[0:144*169],\
                        C[0:32*169])
 void cal_gemm(float *A, float *B, float *C){
