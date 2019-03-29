@@ -1,0 +1,4 @@
+Building file: /home/sdsoc/yc_ws/sdx_ws/proj/HGUFPGAConv_revision/HGUConv_00_NOW_Test/src/convolution.c
+mkdir -p /home/sdsoc/yc_ws/sdx_ws/proj/HGUFPGAConv_revision/HGUConv_00_NOW_Test/build
+mkdir -p /home/sdsoc/yc_ws/sdx_ws/proj/HGUFPGAConv_revision/HGUConv_00_NOW_Test/build/src
+cd /home/sdsoc/yc_ws/sdx_ws/proj/HGUFPGAConv_revision/HGUConv_00_NOW_Test/build/src ; gcc -Wall -O3 -c -DSDSOC -o "/home/sdsoc/yc_ws/sdx_ws/proj/HGUFPGAConv_revision/HGUConv_00_NOW_Test/build/src/convolution.o" "/home/sdsoc/yc_ws/sdx_ws/proj/HGUFPGAConv_revision/HGUConv_00_NOW_Test/src/convolution.c" -lm
